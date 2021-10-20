@@ -107,7 +107,7 @@ extension SignupViewController:SignupViewProtocol{
     func actionRegisterBtn() {
         let babyVC:BabyRegisterVC = BabyRegisterVC()
         self.createMom()
-        babyVC.teste = self.moms?.last
+        babyVC.newMom = self.moms?.last
         
         self.navigationController?.pushViewController(babyVC, animated: true)
     }

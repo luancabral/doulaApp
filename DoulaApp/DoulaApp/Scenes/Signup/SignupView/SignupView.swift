@@ -129,13 +129,13 @@ class SignupView: UIView {
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor
         tf.layer.borderWidth = 1.0
-        tf.inputView = genderPickerView
+        tf.inputView = statePickerView
         
         return tf
         
     }()
     
-    lazy var genderPickerView:UIPickerView = {
+    lazy var statePickerView:UIPickerView = {
         let picker = UIPickerView()
 //        picker.isHidden = true
         return picker
@@ -146,34 +146,7 @@ class SignupView: UIView {
 //        picker.isHidden = true
         return picker
     }()
-    
-    
-    lazy var nationalityLabel:UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor =  .darkGray
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.text  = "Nacionalidade"
-        return label
-    }()
 
-    lazy var nationalityTextField:UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Digite a nacionalidade"
-        tf.textColor = .darkGray
-        tf.font = UIFont.systemFont(ofSize: 14)
-        tf.autocorrectionType = .no
-        tf.keyboardType = .numberPad
-        tf.borderStyle = .roundedRect
-        tf.backgroundColor = .white
-        tf.layer.borderColor = UIColor.clear.cgColor
-        tf.layer.borderWidth = 1.0
-        tf.inputView = nationalityPickerView
-        
-        return tf
-        
-    }()
-    
     
     lazy var nextButton:UIButton = {
         let btn = UIButton()
@@ -240,8 +213,8 @@ class SignupView: UIView {
     }
     
     public func setupPickerDelegate(delegate:UIPickerViewDelegate, dataSource:UIPickerViewDataSource){
-        self.genderPickerView.delegate = delegate
-        self.genderPickerView.dataSource = dataSource
+        self.statePickerView.delegate = delegate
+        self.statePickerView.dataSource = dataSource
     }
     
     

@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol BabyRegisterViewProtocol:AnyObject{
+    func actionCardChristimas()
+}
+
 class BabyRegisterView: UIView {
+    
+    weak private var delegate:BabyRegisterViewProtocol?
+    
     
     lazy var titleLabel:UILabel = {
         let label = UILabel()
@@ -51,14 +58,55 @@ class BabyRegisterView: UIView {
     }()
     
     
-    lazy var christmasCard:UIView = {
-        let view = UIView()
+    lazy var pregnanceStartPickerView:UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.sizeToFit()
+        let loc = Locale(identifier: "pt-br")
+        picker.locale = loc
+        picker.preferredDatePickerStyle = .inline
+        return picker
+    }()
+    
+    lazy var pregnanceStartLabel:UILabel = {
+        let label = UILabel()
+        label.textColor =  .darkGray
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.text  = "Inicio da gestação"
+        return label
+    }()
+    
+    
+    lazy var pregnanceStartTextField:UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Digite o estado civil"
+        tf.textColor = .darkGray
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.borderStyle = .roundedRect
+        tf.backgroundColor = .white
+        tf.layer.borderColor = UIColor.clear.cgColor
+        tf.layer.borderWidth = 1.0
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneBtn = UIBarButtonItem(title:"Pronto",style: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        tf.inputAccessoryView = toolbar
+        tf.inputView = pregnanceStartPickerView
+        return tf
+        
+    }()
+    
+    
+    lazy var christmasCard:UIImageView = {
+        let view = UIImageView()
         view.backgroundColor = .doulaAppMain
         view.clipsToBounds = true
         view.layer.cornerRadius = 6.5
         view.layer.borderWidth =  0.5
         view.layer.borderColor = UIColor.darkGray.cgColor
-        
+        view.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tappedCardChristmas(_:)))
+        view.addGestureRecognizer(tap)
         return view
     }()
     
@@ -70,6 +118,8 @@ class BabyRegisterView: UIView {
         label.text  = "Cartão pré natal"
         return label
     }()
+    
+   
     
     lazy var nextButton:UIButton = {
         let btn = UIButton()
@@ -83,25 +133,90 @@ class BabyRegisterView: UIView {
         return btn
     }()
     
+    
+    lazy var imagePicker = UIImagePickerController()
  
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
     
-   
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     private func setupUI(){
        self.backgroundColor = .doulaAppGray
        setupViews()
     }
+    
+    public func setuptextfiledDelegate(delegate:UITextFieldDelegate){
+        self.nameTextField.delegate =  delegate
+        self.pregnanceStartTextField.delegate = delegate
+    }
+    
+    @objc func tappedCardChristmas(_ sender:UITapGestureRecognizer? = nil){
+        self.delegate?.actionCardChristimas()
+    }
+
+    public func setupDelegate(delegate:BabyRegisterViewProtocol){
+        self.delegate = delegate
+    }
+    
+    
+    public func setupCardChristmasImage(_ pickedImage:UIImage){
+        christmasCard.contentMode = .scaleAspectFit
+        christmasCard.backgroundColor = .clear
+        christmasCard.layer.borderWidth = 0
+        christmasCardLabel.removeFromSuperview()
+        christmasCard.image = pickedImage
+    }
+    
+    
+    public func checkTextField(_ textField:UITextField){
+        
+        let nameTextField:String = textField.text ?? ""
+        
+        if !nameTextField.isEmpty{
+            setUpButtonEnable(true)
+            setTextFieldWarning(textField, warningOn: false)
+      
+        }else{
+            setUpButtonEnable(false)
+            setTextFieldWarning(textField, warningOn: true)
+        }
+    }
+    
+    private func setUpButtonEnable(_ enable:Bool){
+        if enable {
+            self.nextButton.setTitleColor(.white, for: .normal)
+            self.nextButton.isEnabled = true
+        }else{
+            self.nextButton.setTitleColor(.lightGray, for: .normal)
+            self.nextButton.isEnabled = false
+        }
+    }
+    
+    private func setTextFieldWarning(_ textField:UITextField, warningOn:Bool){
+        if warningOn{
+            textField.layer.borderColor = UIColor.red.cgColor
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        }else{
+            textField.layer.borderColor = UIColor.clear.cgColor
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(0.7)])
+        }
+        
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        pregnanceStartTextField.text = formatter.string(from: pregnanceStartPickerView.date)
+        self.endEditing(true)
+    }
+    
 
 }
 
@@ -113,6 +228,8 @@ extension BabyRegisterView:ViewCodable{
         addSubview(tipLabel)
         addSubview(nameLabel)
         addSubview(nameTextField)
+        addSubview(pregnanceStartLabel)
+        addSubview(pregnanceStartTextField)
         addSubview(christmasCard)
         christmasCard.addSubview(christmasCardLabel)
         addSubview(nextButton)
@@ -124,6 +241,8 @@ extension BabyRegisterView:ViewCodable{
         setupTiplabelConstraints()
         setupNamelabelConstraints()
         setupNameTextField()
+        setuppregnanceStartLabelConstraints()
+        setuppregnanceStartTextFieldConstraints()
         setupChristimasCardConstraints()
         setupChristimasCardLabelConstraints()
         setupNextButtonConstraints()
@@ -153,29 +272,43 @@ extension BabyRegisterView:ViewCodable{
         nameTextField.setDimeensionsConstraintWith(height: 44)
     }
     
+    private func setuppregnanceStartLabelConstraints(){
+        pregnanceStartLabel.setTopConstraintWith(nameTextField.bottomAnchor, withConstantEqualTo: 30)
+        pregnanceStartLabel.setLeftConstraint(leftAnchor, withConstantEqualTo: 30)
+    }
+    
+    private func setuppregnanceStartTextFieldConstraints(){
+        pregnanceStartTextField.setTopConstraintWith(pregnanceStartLabel.bottomAnchor, withConstantEqualTo: 5)
+        pregnanceStartTextField.setLeftConstraint(nameTextField.leftAnchor)
+        pregnanceStartTextField.setRightConstraintWith(nameTextField.rightAnchor)
+        pregnanceStartTextField.setDimeensionsConstraintWith(height: 44)
+    }
+    
     
     private func setupChristimasCardConstraints(){
-        christmasCard.setTopConstraintWith(nameTextField.bottomAnchor, withConstantEqualTo: 50)
+        christmasCard.setTopConstraintWith(pregnanceStartTextField.bottomAnchor, withConstantEqualTo: 30)
         christmasCard.setCenterXWith(centerXAnchor)
 
         christmasCard.setRightConstraintWith(nameLabel.rightAnchor)
         christmasCard.setLeftConstraint(nameLabel.leftAnchor)
-        christmasCard.setDimeensionsConstraintWith(height: 180)
+        christmasCard.setBottomConstraintWith(nextButton.topAnchor, withConstantEqualTo: 40)
         
     }
     
     private func setupChristimasCardLabelConstraints(){
-        christmasCardLabel.setCenterXWith(centerXAnchor)
-        christmasCardLabel.setCenterYWith(centerYAnchor)
+        christmasCardLabel.setCenterXWith(christmasCard.centerXAnchor)
+        christmasCardLabel.setCenterYWith(christmasCard.centerYAnchor)
     }
-    
+
     
     private func setupNextButtonConstraints(){
-        nextButton.setTopConstraintWith(christmasCard.bottomAnchor, withConstantEqualTo: 40)
-       
+        nextButton.setBottomConstraintWith(safeAreaLayoutGuide.bottomAnchor, withConstantEqualTo: 20)
         nextButton.setRightConstraintWith(nameTextField.rightAnchor)
         nextButton.setLeftConstraint(nameTextField.leftAnchor)
         nextButton.setDimeensionsConstraintWith(height: 44)
     }
+    
+    
+   
 }
 
