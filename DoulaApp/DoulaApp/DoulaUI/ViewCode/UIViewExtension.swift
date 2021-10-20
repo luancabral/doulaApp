@@ -60,9 +60,15 @@ public extension UIView{
         self.centerYAnchor.constraint(equalTo: constraint).isActive = true
     }
     
-    func setDimeensionsConstraintWith(height:CGFloat, andWithWidth width:CGFloat){
+    func setDimeensionsConstraintWith(height:CGFloat? = nil, andWithWidth width:CGFloat? = nil){
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: height).isActive = true
-        widthAnchor.constraint(equalToConstant: width).isActive = true
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+       
+        
     }
 }
