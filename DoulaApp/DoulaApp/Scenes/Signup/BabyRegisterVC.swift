@@ -7,13 +7,13 @@
 
 import UIKit
 
-class AdressVC: UIViewController {
+class BabyRegisterVC: UIViewController {
 
-    var adressView:AdressView?
+    var babyRegisteView:BabyRegisterView?
     var teste:Mom?
     override func loadView() {
-        self.adressView = AdressView()
-        self.view = adressView
+        self.babyRegisteView = BabyRegisterView()
+        self.view = babyRegisteView
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -187,7 +187,7 @@ class SignupView: UIView {
         return btn
     }()
     
-    
+    //MARK: PUT ON UTILS FOLDER
     public func format(with mask: String, phone: String) -> String {
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
@@ -250,20 +250,42 @@ class SignupView: UIView {
         let nameTextField:String = textField.text ?? ""
         
         if !nameTextField.isEmpty{
-            print(nameTextField)
-            textField.layer.borderColor = UIColor.clear.cgColor
-            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(0.7)])
+            setUpButtonEnable(true)
+            setTextFieldWarning(textField, warningOn: false)
+      
         }else{
+            setUpButtonEnable(false)
+            setTextFieldWarning(textField, warningOn: true)
+        }
+    }
+    
+    private func setUpButtonEnable(_ enable:Bool){
+        if enable {
+            self.nextButton.setTitleColor(.white, for: .normal)
+            self.nextButton.isEnabled = true
+        }else{
+            self.nextButton.setTitleColor(.lightGray, for: .normal)
+            self.nextButton.isEnabled = false
+        }
+    }
+    
+    private func setTextFieldWarning(_ textField:UITextField, warningOn:Bool){
+        if warningOn{
             textField.layer.borderColor = UIColor.red.cgColor
             textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        }else{
+            textField.layer.borderColor = UIColor.clear.cgColor
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray.withAlphaComponent(0.7)])
         }
+        
     }
 }
 
 
 extension SignupView:ViewCodable{
+    
     func setupViewHierarchy() {
         addSubview(titleLabel)
         addSubview(tipLabel)
@@ -273,11 +295,10 @@ extension SignupView:ViewCodable{
         addSubview(rgTextField)
         addSubview(cpfLabel)
         addSubview(cpfTextField)
+        addSubview(stateLabel)
+        addSubview(stateTextField)
         addSubview(nextButton)
-//        addSubview(stateLabel)
-//        addSubview(stateTextField)
-//        addSubview(nationalityLabel)
-//        addSubview(nationalityTextField)
+
     }
     
     func setupConstraints() {
@@ -289,11 +310,9 @@ extension SignupView:ViewCodable{
         setupRgTextField()
         setupCpfLabel()
         setupCpfTextField()
-//        setupGenderLabel()
-//        setupGenderTextField()
+        setupStateabel()
+        setupStateTextField()
         setupNextButtonConstraints()
-//        setupNationalityLabel()
-//        setupNationalityTextField()
     }
     
     
@@ -346,38 +365,26 @@ extension SignupView:ViewCodable{
         cpfTextField.setDimeensionsConstraintWith(height: 44)
     }
     
-//
-//    private func setupStateabel(){
-//        stateLabel.setTopConstraintWith(cpfTextField.bottomAnchor, withConstantEqualTo: 30)
-//        stateLabel.setLeftConstraint(nameLabel.leftAnchor)
-//    }
-//
-//
-//    private func setupStateTextField(){
-//        stateTextField.setTopConstraintWith(stateLabel.bottomAnchor, withConstantEqualTo: 5)
-//        stateTextField.setLeftConstraint(nameLabel.leftAnchor)
-//        stateTextField.setRightConstraintWith(nameTextField.rightAnchor)
-//        stateTextField.setDimeensionsConstraintWith(height: 44)
-//    }
-//
+
+    private func setupStateabel(){
+        stateLabel.setTopConstraintWith(cpfTextField.bottomAnchor, withConstantEqualTo: 30)
+        stateLabel.setLeftConstraint(nameLabel.leftAnchor)
+    }
+
+
+    private func setupStateTextField(){
+        stateTextField.setTopConstraintWith(stateLabel.bottomAnchor, withConstantEqualTo: 5)
+        stateTextField.setLeftConstraint(nameLabel.leftAnchor)
+        stateTextField.setRightConstraintWith(nameTextField.rightAnchor)
+        stateTextField.setDimeensionsConstraintWith(height: 44)
+    }
+
     
-    
-//    private func setupNationalityLabel(){
-//        nationalityLabel.setTopConstraintWith(stateTextField.bottomAnchor, withConstantEqualTo: 30)
-//        nationalityLabel.setLeftConstraint(nameLabel.leftAnchor)
-//    }
-//
-//
-//    private func setupNationalityTextField(){
-//        nationalityTextField.setTopConstraintWith(nationalityLabel.bottomAnchor, withConstantEqualTo: 5)
-//        nationalityTextField.setLeftConstraint(nameLabel.leftAnchor)
-//        nationalityTextField.setRightConstraintWith(nameTextField.rightAnchor)
-//        nationalityTextField.setDimeensionsConstraintWith(height: 44)
-//    }
+
     
     
     private func setupNextButtonConstraints(){
-        nextButton.setTopConstraintWith(cpfTextField.bottomAnchor, withConstantEqualTo: 20)
+        nextButton.setTopConstraintWith(stateTextField.bottomAnchor, withConstantEqualTo: 30)
         nextButton.setRightConstraintWith(nameTextField.rightAnchor)
         nextButton.setLeftConstraint(nameTextField.leftAnchor)
         nextButton.setDimeensionsConstraintWith(height: 44)

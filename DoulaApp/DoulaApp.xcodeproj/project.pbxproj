@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		863D8B98271F403400418F1C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D8B97271F403400418F1C /* SignupViewController.swift */; };
 		863D8B9A271F404F00418F1C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D8B99271F404F00418F1C /* SignupView.swift */; };
-		86A66E6A271F824A005313A5 /* AdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E69271F8249005313A5 /* AdressView.swift */; };
-		86A66E6C271F825E005313A5 /* AdressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E6B271F825E005313A5 /* AdressVC.swift */; };
+		86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E69271F8249005313A5 /* BabyRegisterView.swift */; };
+		86A66E6C271F825E005313A5 /* BabyRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */; };
 		86CADE14271BC83B00DD0BDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CADE13271BC83B00DD0BDC /* AppDelegate.swift */; };
 		86CADE16271BC83B00DD0BDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CADE15271BC83B00DD0BDC /* SceneDelegate.swift */; };
 		86CADE18271BC83B00DD0BDC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CADE17271BC83B00DD0BDC /* HomeVC.swift */; };
@@ -40,8 +40,8 @@
 /* Begin PBXFileReference section */
 		863D8B97271F403400418F1C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		863D8B99271F404F00418F1C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		86A66E69271F8249005313A5 /* AdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressView.swift; sourceTree = "<group>"; };
-		86A66E6B271F825E005313A5 /* AdressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressVC.swift; sourceTree = "<group>"; };
+		86A66E69271F8249005313A5 /* BabyRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterView.swift; sourceTree = "<group>"; };
+		86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterVC.swift; sourceTree = "<group>"; };
 		86CADE10271BC83B00DD0BDC /* DoulaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoulaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CADE13271BC83B00DD0BDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86CADE15271BC83B00DD0BDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			children = (
 				863D8B96271F400100418F1C /* SignupView */,
 				863D8B97271F403400418F1C /* SignupViewController.swift */,
-				86A66E6B271F825E005313A5 /* AdressVC.swift */,
+				86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 		863D8B96271F400100418F1C /* SignupView */ = {
 			isa = PBXGroup;
 			children = (
-				86A66E69271F8249005313A5 /* AdressView.swift */,
+				86A66E69271F8249005313A5 /* BabyRegisterView.swift */,
 				863D8B99271F404F00418F1C /* SignupView.swift */,
 			);
 			path = SignupView;
@@ -326,7 +326,7 @@
 				86E31635271E035B0098E617 /* CoreDataStack.swift in Sources */,
 				86E3162D271DFF530098E617 /* Relative+CoreDataClass.swift in Sources */,
 				86E31630271DFF530098E617 /* Baby+CoreDataProperties.swift in Sources */,
-				86A66E6A271F824A005313A5 /* AdressView.swift in Sources */,
+				86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */,
 				86E3162C271DFF530098E617 /* Doctor+CoreDataProperties.swift in Sources */,
 				86CADE18271BC83B00DD0BDC /* HomeVC.swift in Sources */,
 				86E31629271DFF530098E617 /* Mom+CoreDataClass.swift in Sources */,
@@ -343,7 +343,7 @@
 				86E31637271E059D0098E617 /* CoreDataHandleError.swift in Sources */,
 				86E3163E271E54230098E617 /* ViewCodable.swift in Sources */,
 				86F37934271DF4AD00D1C4EB /* DoulaApp.xcdatamodeld in Sources */,
-				86A66E6C271F825E005313A5 /* AdressVC.swift in Sources */,
+				86A66E6C271F825E005313A5 /* BabyRegisterVC.swift in Sources */,
 				86E3162A271DFF530098E617 /* Mom+CoreDataProperties.swift in Sources */,
 				86E3164E271E68120098E617 /* MomCollectionViewCell.swift in Sources */,
 				86E31653271E78A80098E617 /* UIColor+Extensions.swift in Sources */,

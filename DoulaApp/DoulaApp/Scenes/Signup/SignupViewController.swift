@@ -105,11 +105,11 @@ extension SignupViewController:UIPickerViewDelegate, UIPickerViewDataSource{
 
 extension SignupViewController:SignupViewProtocol{
     func actionRegisterBtn() {
-        let adressVC:AdressVC = AdressVC()
+        let babyVC:BabyRegisterVC = BabyRegisterVC()
         self.createMom()
-        adressVC.teste = self.moms?.last
+        babyVC.teste = self.moms?.last
         
-        self.navigationController?.pushViewController(adressVC, animated: true)
+        self.navigationController?.pushViewController(babyVC, animated: true)
     }
     
     
