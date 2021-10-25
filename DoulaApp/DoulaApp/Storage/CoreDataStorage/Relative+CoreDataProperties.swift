@@ -2,7 +2,7 @@
 //  Relative+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 18/10/21.
+//  Created by Luan Cabral on 22/10/21.
 //
 //
 
@@ -16,10 +16,10 @@ extension Relative {
         return NSFetchRequest<Relative>(entityName: "Relative")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var kinship: String?
-    @NSManaged public var phone: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var kinship: String?
+    @NSManaged public var name: String?
+    @NSManaged public var phone: String?
     @NSManaged public var mother: Mom?
 
 }

@@ -2,7 +2,7 @@
 //  Hospital+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 18/10/21.
+//  Created by Luan Cabral on 22/10/21.
 //
 //
 
@@ -16,9 +16,9 @@ extension Hospital {
         return NSFetchRequest<Hospital>(entityName: "Hospital")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var address: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var name: String?
     @NSManaged public var mother: Mom?
 
 }
