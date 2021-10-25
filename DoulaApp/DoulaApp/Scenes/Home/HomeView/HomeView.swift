@@ -43,7 +43,7 @@ class HomeView:UIView{
 //        collectionView.layer.cornerRadius = 50
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delaysContentTouches = false
-        collectionView.register(MomCollectionViewCell.self, forCellWithReuseIdentifier: MomCollectionViewCell.identifier)
+    
         collectionView.clipsToBounds = true
         collectionView.layer.cornerRadius = 30
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()

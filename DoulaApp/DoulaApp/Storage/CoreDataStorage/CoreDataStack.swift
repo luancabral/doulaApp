@@ -32,7 +32,7 @@ public final class CoreDataStack{
         return persistentContainer.viewContext
     }()
     
-    func saveContext(){
+    public func saveContext(){
         let context = persistentContainer.viewContext
         if context.hasChanges{
             do {

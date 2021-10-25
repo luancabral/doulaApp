@@ -2,7 +2,7 @@
 //  Doctor+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 18/10/21.
+//  Created by Luan Cabral on 22/10/21.
 //
 //
 
@@ -19,6 +19,7 @@ extension Doctor {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var specialty: String?
+    @NSManaged public var phone: String?
     @NSManaged public var mom: NSSet?
 
 }

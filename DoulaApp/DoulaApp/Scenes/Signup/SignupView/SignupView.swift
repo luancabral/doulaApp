@@ -55,6 +55,7 @@ class SignupView: UIView {
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor
         tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 4
         return tf
     }()
     
@@ -79,6 +80,7 @@ class SignupView: UIView {
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor
         tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 4
         return tf
     }()
     
@@ -103,6 +105,7 @@ class SignupView: UIView {
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor
         tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 4
         return tf
     }()
     
@@ -130,6 +133,7 @@ class SignupView: UIView {
         tf.layer.borderColor = UIColor.clear.cgColor
         tf.layer.borderWidth = 1.0
         tf.inputView = statePickerView
+        tf.layer.cornerRadius = 4
         
         return tf
         
@@ -141,21 +145,17 @@ class SignupView: UIView {
         return picker
     }()
     
-    lazy var nationalityPickerView:UIPickerView = {
-        let picker = UIPickerView()
-//        picker.isHidden = true
-        return picker
-    }()
+
 
     
     lazy var nextButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("Continuar", for: .normal)
         btn.clipsToBounds = true
-        btn.backgroundColor = .doulaAppMain
+        btn.backgroundColor = .doulaAppPurple
         btn.titleLabel?.font =  UIFont.systemFont(ofSize: 13)
         btn.layer.cornerRadius = 5.5
-        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.isEnabled = false
         btn.addTarget(self, action: #selector(self.tappednextButton), for: .touchUpInside)
         return btn
     }()

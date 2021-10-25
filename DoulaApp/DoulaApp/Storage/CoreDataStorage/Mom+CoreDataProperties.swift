@@ -2,7 +2,7 @@
 //  Mom+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 18/10/21.
+//  Created by Luan Cabral on 22/10/21.
 //
 //
 
@@ -16,34 +16,18 @@ extension Mom {
         return NSFetchRequest<Mom>(entityName: "Mom")
     }
 
+    @NSManaged public var cpf: String?
+    @NSManaged public var dpp: Date?
+    @NSManaged public var id: UUID?
+    @NSManaged public var insurance: String?
     @NSManaged public var name: String?
     @NSManaged public var rg: String?
-    @NSManaged public var cpf: String?
-    @NSManaged public var adress: String?
-    @NSManaged public var dpp: Date?
-    @NSManaged public var insurance: String?
-    @NSManaged public var id: UUID?
-    @NSManaged public var people: NSSet?
-    @NSManaged public var hospital: NSSet?
-    @NSManaged public var baby: NSSet?
+    @NSManaged public var state: String?
+    @NSManaged public var baby: Baby?
     @NSManaged public var doctor: Doctor?
-
-}
-
-// MARK: Generated accessors for people
-extension Mom {
-
-    @objc(addPeopleObject:)
-    @NSManaged public func addToPeople(_ value: Relative)
-
-    @objc(removePeopleObject:)
-    @NSManaged public func removeFromPeople(_ value: Relative)
-
-    @objc(addPeople:)
-    @NSManaged public func addToPeople(_ values: NSSet)
-
-    @objc(removePeople:)
-    @NSManaged public func removeFromPeople(_ values: NSSet)
+    @NSManaged public var hospital: NSSet?
+    @NSManaged public var people: Relative?
+    @NSManaged public var adress: Adress?
 
 }
 
@@ -61,23 +45,6 @@ extension Mom {
 
     @objc(removeHospital:)
     @NSManaged public func removeFromHospital(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for baby
-extension Mom {
-
-    @objc(addBabyObject:)
-    @NSManaged public func addToBaby(_ value: Baby)
-
-    @objc(removeBabyObject:)
-    @NSManaged public func removeFromBaby(_ value: Baby)
-
-    @objc(addBaby:)
-    @NSManaged public func addToBaby(_ values: NSSet)
-
-    @objc(removeBaby:)
-    @NSManaged public func removeFromBaby(_ values: NSSet)
 
 }
 

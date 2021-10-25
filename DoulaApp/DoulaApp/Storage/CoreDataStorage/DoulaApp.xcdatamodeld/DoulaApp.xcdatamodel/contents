@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Adress" representedClassName="Adress" syncable="YES">
+        <attribute name="cep" optional="YES" attributeType="String"/>
+        <attribute name="complement" optional="YES" attributeType="String"/>
+        <attribute name="district" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <relationship name="mom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mom" inverseName="adress" inverseEntity="Mom"/>
+    </entity>
     <entity name="Baby" representedClassName="Baby" syncable="YES">
         <attribute name="christmasCard" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pregnanceBegin" optional="YES" attributeType="String"/>
+        <attribute name="weeks" optional="YES" attributeType="String"/>
         <relationship name="mother" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mom" inverseName="baby" inverseEntity="Mom"/>
     </entity>
     <entity name="Doctor" representedClassName="Doctor" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
         <attribute name="specialty" optional="YES" attributeType="String"/>
         <relationship name="mom" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mom" inverseName="doctor" inverseEntity="Mom"/>
     </entity>
@@ -19,17 +31,18 @@
         <relationship name="mother" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mom" inverseName="hospital" inverseEntity="Mom"/>
     </entity>
     <entity name="Mom" representedClassName="Mom" syncable="YES">
-        <attribute name="adress" optional="YES" attributeType="String"/>
         <attribute name="cpf" optional="YES" attributeType="String"/>
         <attribute name="dpp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="insurance" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="rg" optional="YES" attributeType="String"/>
-        <relationship name="baby" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Baby" inverseName="mother" inverseEntity="Baby"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <relationship name="adress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Adress" inverseName="mom" inverseEntity="Adress"/>
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="mother" inverseEntity="Baby"/>
         <relationship name="doctor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="mom" inverseEntity="Doctor"/>
         <relationship name="hospital" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hospital" inverseName="mother" inverseEntity="Hospital"/>
-        <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relative" inverseName="mother" inverseEntity="Relative"/>
+        <relationship name="people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Relative" inverseName="mother" inverseEntity="Relative"/>
     </entity>
     <entity name="Relative" representedClassName="Relative" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -39,10 +52,11 @@
         <relationship name="mother" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mom" inverseName="people" inverseEntity="Mom"/>
     </entity>
     <elements>
-        <element name="Mom" positionX="-63" positionY="-18" width="128" height="194"/>
-        <element name="Relative" positionX="-54" positionY="36" width="128" height="104"/>
+        <element name="Adress" positionX="-36" positionY="90" width="128" height="134"/>
+        <element name="Baby" positionX="-27" positionY="72" width="128" height="119"/>
+        <element name="Doctor" positionX="-18" positionY="99" width="128" height="104"/>
         <element name="Hospital" positionX="-45" positionY="63" width="128" height="89"/>
-        <element name="Baby" positionX="-27" positionY="72" width="128" height="89"/>
-        <element name="Doctor" positionX="-18" positionY="99" width="128" height="89"/>
+        <element name="Mom" positionX="-63" positionY="-18" width="128" height="209"/>
+        <element name="Relative" positionX="-54" positionY="36" width="128" height="104"/>
     </elements>
 </model>

@@ -9,10 +9,10 @@ import UIKit
 
 class SignupViewController: UIViewController {
     let pickerViewData:[String] = ["Solteira", "Casada","Separada","Divorciada", "Viúva"]
-    let context = CoreDataStack.shared.viewContext
+    let contetxt = CoreDataStack.shared.viewContext
     var signupView:SignupView?
     var moms:[Mom]?
-    
+    var newMom:Mom?
     override func loadView() {
         self.signupView = SignupView()
         self.view = signupView
@@ -22,32 +22,20 @@ class SignupViewController: UIViewController {
         self.signupView?.delegate(delegate: self)
         self.signupView?.setupTextFieldDelegate(delegate: self)
         self.signupView?.setupPickerDelegate(delegate: self, dataSource: self)
+        self.navigationController?.isNavigationBarHidden = false
+        
     }
-    
-    func fetchPeople(){
-        do {
-            self.moms = try context.fetch(Mom.fetchRequest())
-            //refresh collection with dispatch
-        } catch {
-            print("Error")
-        }
-    }
-    
     
     func createMom(){
         //Create object
-        let newMom = Mom(context: self.context)
+        let newMom = Mom(context: self.contetxt)
         newMom.name = self.signupView?.nameTextField.text
-        
+        newMom.rg =  self.signupView?.rgTextField.text
+        newMom.cpf = self.signupView?.cpfTextField.text
+        newMom.state = self.signupView?.stateTextField.text
         //Save data
-        do {
-            try  self.context.save()
-        } catch {
-            print("Error ao salvar")
-        }
-        
-        //Re-fetch
-        self.fetchPeople()
+//            stack.saveContext()
+        self.newMom = newMom
     }
 }
 
@@ -107,7 +95,7 @@ extension SignupViewController:SignupViewProtocol{
     func actionRegisterBtn() {
         let babyVC:BabyRegisterVC = BabyRegisterVC()
         self.createMom()
-        babyVC.newMom = self.moms?.last
+        babyVC.newMom = self.newMom
         
         self.navigationController?.pushViewController(babyVC, animated: true)
     }
