@@ -20,18 +20,6 @@
 		8683478E272352EC0051FFDC /* HospitalDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683478D272352EC0051FFDC /* HospitalDataCollectionViewCell.swift */; };
 		8683479027235ABC0051FFDC /* RegisterMomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683478F27235ABC0051FFDC /* RegisterMomCollectionViewCell.swift */; };
 		86834792272366AD0051FFDC /* NotesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834791272366AC0051FFDC /* NotesCollectionViewCell.swift */; };
-		8683479F272368010051FFDC /* Relative+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834793272368010051FFDC /* Relative+CoreDataClass.swift */; };
-		868347A0272368010051FFDC /* Relative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834794272368010051FFDC /* Relative+CoreDataProperties.swift */; };
-		868347A1272368010051FFDC /* Mom+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834795272368010051FFDC /* Mom+CoreDataClass.swift */; };
-		868347A2272368010051FFDC /* Mom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834796272368010051FFDC /* Mom+CoreDataProperties.swift */; };
-		868347A3272368010051FFDC /* Adress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834797272368010051FFDC /* Adress+CoreDataClass.swift */; };
-		868347A4272368010051FFDC /* Adress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834798272368010051FFDC /* Adress+CoreDataProperties.swift */; };
-		868347A5272368010051FFDC /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834799272368010051FFDC /* Baby+CoreDataClass.swift */; };
-		868347A6272368010051FFDC /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683479A272368010051FFDC /* Baby+CoreDataProperties.swift */; };
-		868347A7272368010051FFDC /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683479B272368010051FFDC /* Doctor+CoreDataClass.swift */; };
-		868347A8272368010051FFDC /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683479C272368010051FFDC /* Doctor+CoreDataProperties.swift */; };
-		868347A9272368010051FFDC /* Hospital+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683479D272368010051FFDC /* Hospital+CoreDataClass.swift */; };
-		868347AA272368010051FFDC /* Hospital+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683479E272368010051FFDC /* Hospital+CoreDataProperties.swift */; };
 		86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E69271F8249005313A5 /* BabyRegisterView.swift */; };
 		86A66E6C271F825E005313A5 /* BabyRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */; };
 		86BF1B732720A8D100294D0D /* AdressRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF1B722720A8D100294D0D /* AdressRegisterView.swift */; };
@@ -54,6 +42,23 @@
 		86E3164E271E68120098E617 /* MomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E3164D271E68120098E617 /* MomCollectionViewCell.swift */; };
 		86E31653271E78A80098E617 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E31652271E78A80098E617 /* UIColor+Extensions.swift */; };
 		86F37934271DF4AD00D1C4EB /* DoulaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86F37932271DF4AD00D1C4EB /* DoulaApp.xcdatamodeld */; };
+		86FCC09F272B656D00F13D0A /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC09E272B656D00F13D0A /* NoteTableViewCell.swift */; };
+		86FCC0C0272B74BA00F13D0A /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0BF272B74BA00F13D0A /* AddNoteViewController.swift */; };
+		86FCC0C2272B74CB00F13D0A /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0C1272B74CB00F13D0A /* AddNoteView.swift */; };
+		86FCC0D6272B9B7900F13D0A /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0C8272B9B7900F13D0A /* Note+CoreDataClass.swift */; };
+		86FCC0D7272B9B7900F13D0A /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0C9272B9B7900F13D0A /* Note+CoreDataProperties.swift */; };
+		86FCC0D8272B9B7900F13D0A /* Adress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CA272B9B7900F13D0A /* Adress+CoreDataClass.swift */; };
+		86FCC0D9272B9B7900F13D0A /* Adress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CB272B9B7900F13D0A /* Adress+CoreDataProperties.swift */; };
+		86FCC0DA272B9B7900F13D0A /* Relative+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CC272B9B7900F13D0A /* Relative+CoreDataClass.swift */; };
+		86FCC0DB272B9B7900F13D0A /* Relative+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CD272B9B7900F13D0A /* Relative+CoreDataProperties.swift */; };
+		86FCC0DC272B9B7900F13D0A /* Doctor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CE272B9B7900F13D0A /* Doctor+CoreDataClass.swift */; };
+		86FCC0DD272B9B7900F13D0A /* Doctor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0CF272B9B7900F13D0A /* Doctor+CoreDataProperties.swift */; };
+		86FCC0DE272B9B7900F13D0A /* Mom+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D0272B9B7900F13D0A /* Mom+CoreDataClass.swift */; };
+		86FCC0DF272B9B7900F13D0A /* Mom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D1272B9B7900F13D0A /* Mom+CoreDataProperties.swift */; };
+		86FCC0E0272B9B7900F13D0A /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D2272B9B7900F13D0A /* Baby+CoreDataClass.swift */; };
+		86FCC0E1272B9B7900F13D0A /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D3272B9B7900F13D0A /* Baby+CoreDataProperties.swift */; };
+		86FCC0E2272B9B7900F13D0A /* Hospital+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D4272B9B7900F13D0A /* Hospital+CoreDataClass.swift */; };
+		86FCC0E3272B9B7900F13D0A /* Hospital+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCC0D5272B9B7900F13D0A /* Hospital+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,18 +75,6 @@
 		8683478D272352EC0051FFDC /* HospitalDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		8683478F27235ABC0051FFDC /* RegisterMomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMomCollectionViewCell.swift; sourceTree = "<group>"; };
 		86834791272366AC0051FFDC /* NotesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCollectionViewCell.swift; sourceTree = "<group>"; };
-		86834793272368010051FFDC /* Relative+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relative+CoreDataClass.swift"; sourceTree = "<group>"; };
-		86834794272368010051FFDC /* Relative+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relative+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		86834795272368010051FFDC /* Mom+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mom+CoreDataClass.swift"; sourceTree = "<group>"; };
-		86834796272368010051FFDC /* Mom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mom+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		86834797272368010051FFDC /* Adress+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adress+CoreDataClass.swift"; sourceTree = "<group>"; };
-		86834798272368010051FFDC /* Adress+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adress+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		86834799272368010051FFDC /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8683479A272368010051FFDC /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8683479B272368010051FFDC /* Doctor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8683479C272368010051FFDC /* Doctor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8683479D272368010051FFDC /* Hospital+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hospital+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8683479E272368010051FFDC /* Hospital+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hospital+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86A66E69271F8249005313A5 /* BabyRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterView.swift; sourceTree = "<group>"; };
 		86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterVC.swift; sourceTree = "<group>"; };
 		86BF1B722720A8D100294D0D /* AdressRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressRegisterView.swift; sourceTree = "<group>"; };
@@ -106,6 +99,23 @@
 		86E3164D271E68120098E617 /* MomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomCollectionViewCell.swift; sourceTree = "<group>"; };
 		86E31652271E78A80098E617 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		86F37933271DF4AD00D1C4EB /* DoulaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoulaApp.xcdatamodel; sourceTree = "<group>"; };
+		86FCC09E272B656D00F13D0A /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		86FCC0BF272B74BA00F13D0A /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		86FCC0C1272B74CB00F13D0A /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		86FCC0C8272B9B7900F13D0A /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0C9272B9B7900F13D0A /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0CA272B9B7900F13D0A /* Adress+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adress+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0CB272B9B7900F13D0A /* Adress+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adress+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0CC272B9B7900F13D0A /* Relative+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relative+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0CD272B9B7900F13D0A /* Relative+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relative+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0CE272B9B7900F13D0A /* Doctor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0CF272B9B7900F13D0A /* Doctor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Doctor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0D0272B9B7900F13D0A /* Mom+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mom+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0D1272B9B7900F13D0A /* Mom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0D2272B9B7900F13D0A /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0D3272B9B7900F13D0A /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86FCC0D4272B9B7900F13D0A /* Hospital+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hospital+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86FCC0D5272B9B7900F13D0A /* Hospital+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hospital+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,27 +151,26 @@
 			path = SignupView;
 			sourceTree = "<group>";
 		};
-		8683477C272251F20051FFDC /* Profile */ = {
+		8683477C272251F20051FFDC /* DataView */ = {
 			isa = PBXGroup;
 			children = (
+				86FCC0C6272B7E4D00F13D0A /* Menu */,
+				86FCC0C5272B7E2D00F13D0A /* HospitalData */,
+				8683477E272252870051FFDC /* ProfileView.swift */,
+				86FCC0C4272B7DF200F13D0A /* RelativeData */,
+				86FCC0C3272B7DC600F13D0A /* Note */,
 				86834780272253DF0051FFDC /* ViewController */,
-				8683477D2722525B0051FFDC /* ProfileView */,
+				8683477D2722525B0051FFDC /* MomData */,
 			);
-			path = Profile;
+			path = DataView;
 			sourceTree = "<group>";
 		};
-		8683477D2722525B0051FFDC /* ProfileView */ = {
+		8683477D2722525B0051FFDC /* MomData */ = {
 			isa = PBXGroup;
 			children = (
-				8683477E272252870051FFDC /* ProfileView.swift */,
-				8683478527225FE90051FFDC /* MenuBar.swift */,
-				86834787272265CD0051FFDC /* MenuCellCollectionViewCell.swift */,
-				86834789272341F00051FFDC /* RelativeDataCollectionViewCell.swift */,
 				8683478B272345400051FFDC /* MomDataViewCollectionViewCell.swift */,
-				8683478D272352EC0051FFDC /* HospitalDataCollectionViewCell.swift */,
-				86834791272366AC0051FFDC /* NotesCollectionViewCell.swift */,
 			);
-			path = ProfileView;
+			path = MomData;
 			sourceTree = "<group>";
 		};
 		86834780272253DF0051FFDC /* ViewController */ = {
@@ -217,18 +226,20 @@
 		86E31633271E02470098E617 /* CoreDataStorage */ = {
 			isa = PBXGroup;
 			children = (
-				86834793272368010051FFDC /* Relative+CoreDataClass.swift */,
-				86834794272368010051FFDC /* Relative+CoreDataProperties.swift */,
-				86834795272368010051FFDC /* Mom+CoreDataClass.swift */,
-				86834796272368010051FFDC /* Mom+CoreDataProperties.swift */,
-				86834797272368010051FFDC /* Adress+CoreDataClass.swift */,
-				86834798272368010051FFDC /* Adress+CoreDataProperties.swift */,
-				86834799272368010051FFDC /* Baby+CoreDataClass.swift */,
-				8683479A272368010051FFDC /* Baby+CoreDataProperties.swift */,
-				8683479B272368010051FFDC /* Doctor+CoreDataClass.swift */,
-				8683479C272368010051FFDC /* Doctor+CoreDataProperties.swift */,
-				8683479D272368010051FFDC /* Hospital+CoreDataClass.swift */,
-				8683479E272368010051FFDC /* Hospital+CoreDataProperties.swift */,
+				86FCC0C8272B9B7900F13D0A /* Note+CoreDataClass.swift */,
+				86FCC0C9272B9B7900F13D0A /* Note+CoreDataProperties.swift */,
+				86FCC0CA272B9B7900F13D0A /* Adress+CoreDataClass.swift */,
+				86FCC0CB272B9B7900F13D0A /* Adress+CoreDataProperties.swift */,
+				86FCC0CC272B9B7900F13D0A /* Relative+CoreDataClass.swift */,
+				86FCC0CD272B9B7900F13D0A /* Relative+CoreDataProperties.swift */,
+				86FCC0CE272B9B7900F13D0A /* Doctor+CoreDataClass.swift */,
+				86FCC0CF272B9B7900F13D0A /* Doctor+CoreDataProperties.swift */,
+				86FCC0D0272B9B7900F13D0A /* Mom+CoreDataClass.swift */,
+				86FCC0D1272B9B7900F13D0A /* Mom+CoreDataProperties.swift */,
+				86FCC0D2272B9B7900F13D0A /* Baby+CoreDataClass.swift */,
+				86FCC0D3272B9B7900F13D0A /* Baby+CoreDataProperties.swift */,
+				86FCC0D4272B9B7900F13D0A /* Hospital+CoreDataClass.swift */,
+				86FCC0D5272B9B7900F13D0A /* Hospital+CoreDataProperties.swift */,
 				86F37932271DF4AD00D1C4EB /* DoulaApp.xcdatamodeld */,
 				86E31634271E035B0098E617 /* CoreDataStack.swift */,
 				86E31636271E059D0098E617 /* CoreDataHandleError.swift */,
@@ -283,7 +294,8 @@
 		86E31641271E57110098E617 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8683477C272251F20051FFDC /* Profile */,
+				86FCC0BE272B749800F13D0A /* AddNote */,
+				8683477C272251F20051FFDC /* DataView */,
 				863D8B95271F3FCA00418F1C /* Signup */,
 				86E31642271E571E0098E617 /* Home */,
 			);
@@ -340,6 +352,49 @@
 				86E31633271E02470098E617 /* CoreDataStorage */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		86FCC0BE272B749800F13D0A /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				86FCC0BF272B74BA00F13D0A /* AddNoteViewController.swift */,
+				86FCC0C1272B74CB00F13D0A /* AddNoteView.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		86FCC0C3272B7DC600F13D0A /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				86FCC09E272B656D00F13D0A /* NoteTableViewCell.swift */,
+				86834791272366AC0051FFDC /* NotesCollectionViewCell.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		86FCC0C4272B7DF200F13D0A /* RelativeData */ = {
+			isa = PBXGroup;
+			children = (
+				86834789272341F00051FFDC /* RelativeDataCollectionViewCell.swift */,
+			);
+			path = RelativeData;
+			sourceTree = "<group>";
+		};
+		86FCC0C5272B7E2D00F13D0A /* HospitalData */ = {
+			isa = PBXGroup;
+			children = (
+				8683478D272352EC0051FFDC /* HospitalDataCollectionViewCell.swift */,
+			);
+			path = HospitalData;
+			sourceTree = "<group>";
+		};
+		86FCC0C6272B7E4D00F13D0A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8683478527225FE90051FFDC /* MenuBar.swift */,
+				86834787272265CD0051FFDC /* MenuCellCollectionViewCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,48 +468,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E31635271E035B0098E617 /* CoreDataStack.swift in Sources */,
-				8683479F272368010051FFDC /* Relative+CoreDataClass.swift in Sources */,
+				86FCC0E1272B9B7900F13D0A /* Baby+CoreDataProperties.swift in Sources */,
 				861225332720E02D000226B3 /* HospitalRegisterViewController.swift in Sources */,
-				868347A1272368010051FFDC /* Mom+CoreDataClass.swift in Sources */,
+				86FCC0E3272B9B7900F13D0A /* Hospital+CoreDataProperties.swift in Sources */,
+				86FCC0E2272B9B7900F13D0A /* Hospital+CoreDataClass.swift in Sources */,
+				86FCC0C2272B74CB00F13D0A /* AddNoteView.swift in Sources */,
 				86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */,
 				86CADE18271BC83B00DD0BDC /* HomeVC.swift in Sources */,
+				86FCC0DF272B9B7900F13D0A /* Mom+CoreDataProperties.swift in Sources */,
 				86BF1B732720A8D100294D0D /* AdressRegisterView.swift in Sources */,
-				868347A2272368010051FFDC /* Mom+CoreDataProperties.swift in Sources */,
-				868347AA272368010051FFDC /* Hospital+CoreDataProperties.swift in Sources */,
 				8683478C272345400051FFDC /* MomDataViewCollectionViewCell.swift in Sources */,
 				86834788272265CD0051FFDC /* MenuCellCollectionViewCell.swift in Sources */,
+				86FCC0DD272B9B7900F13D0A /* Doctor+CoreDataProperties.swift in Sources */,
 				8683478E272352EC0051FFDC /* HospitalDataCollectionViewCell.swift in Sources */,
 				8683477F272252870051FFDC /* ProfileView.swift in Sources */,
-				868347A0272368010051FFDC /* Relative+CoreDataProperties.swift in Sources */,
-				868347A4272368010051FFDC /* Adress+CoreDataProperties.swift in Sources */,
+				86FCC0DA272B9B7900F13D0A /* Relative+CoreDataClass.swift in Sources */,
+				86FCC0C0272B74BA00F13D0A /* AddNoteViewController.swift in Sources */,
 				86E31640271E54A90098E617 /* UIViewExtension.swift in Sources */,
 				86BF1B7C2720D9BC00294D0D /* DoctorRegisterView.swift in Sources */,
 				86CADE14271BC83B00DD0BDC /* AppDelegate.swift in Sources */,
+				86FCC0D8272B9B7900F13D0A /* Adress+CoreDataClass.swift in Sources */,
+				86FCC0D9272B9B7900F13D0A /* Adress+CoreDataProperties.swift in Sources */,
 				86E3164A271E66680098E617 /* MomCollectionViewCellView.swift in Sources */,
-				868347A7272368010051FFDC /* Doctor+CoreDataClass.swift in Sources */,
 				8683479027235ABC0051FFDC /* RegisterMomCollectionViewCell.swift in Sources */,
 				8683478A272341F00051FFDC /* RelativeDataCollectionViewCell.swift in Sources */,
+				86FCC0DE272B9B7900F13D0A /* Mom+CoreDataClass.swift in Sources */,
 				86BF1B7A2720B8FB00294D0D /* RelativeViewController.swift in Sources */,
 				86CADE16271BC83B00DD0BDC /* SceneDelegate.swift in Sources */,
 				863D8B9A271F404F00418F1C /* SignupView.swift in Sources */,
 				86BF1B752720A8F000294D0D /* AdressRegisterViewController.swift in Sources */,
 				861225312720DFEB000226B3 /* HospitalRegisterView.swift in Sources */,
+				86FCC0E0272B9B7900F13D0A /* Baby+CoreDataClass.swift in Sources */,
 				86BF1B782720B8A800294D0D /* RelativeRegisterView.swift in Sources */,
-				868347A8272368010051FFDC /* Doctor+CoreDataProperties.swift in Sources */,
 				86E31637271E059D0098E617 /* CoreDataHandleError.swift in Sources */,
 				86BF1B7E2720D9FF00294D0D /* DoctorRegisterViewController.swift in Sources */,
 				86E3163E271E54230098E617 /* ViewCodable.swift in Sources */,
-				868347A9272368010051FFDC /* Hospital+CoreDataClass.swift in Sources */,
-				868347A5272368010051FFDC /* Baby+CoreDataClass.swift in Sources */,
-				868347A6272368010051FFDC /* Baby+CoreDataProperties.swift in Sources */,
 				86F37934271DF4AD00D1C4EB /* DoulaApp.xcdatamodeld in Sources */,
 				86A66E6C271F825E005313A5 /* BabyRegisterVC.swift in Sources */,
+				86FCC0DB272B9B7900F13D0A /* Relative+CoreDataProperties.swift in Sources */,
+				86FCC09F272B656D00F13D0A /* NoteTableViewCell.swift in Sources */,
 				86834782272254000051FFDC /* ProfileViewController.swift in Sources */,
-				868347A3272368010051FFDC /* Adress+CoreDataClass.swift in Sources */,
 				86E3164E271E68120098E617 /* MomCollectionViewCell.swift in Sources */,
+				86FCC0D7272B9B7900F13D0A /* Note+CoreDataProperties.swift in Sources */,
 				8683478627225FE90051FFDC /* MenuBar.swift in Sources */,
+				86FCC0DC272B9B7900F13D0A /* Doctor+CoreDataClass.swift in Sources */,
 				86E31653271E78A80098E617 /* UIColor+Extensions.swift in Sources */,
 				863D8B98271F403400418F1C /* SignupViewController.swift in Sources */,
+				86FCC0D6272B9B7900F13D0A /* Note+CoreDataClass.swift in Sources */,
 				86E31647271E57FB0098E617 /* HomeView.swift in Sources */,
 				86834792272366AD0051FFDC /* NotesCollectionViewCell.swift in Sources */,
 			);

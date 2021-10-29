@@ -2,7 +2,7 @@
 //  Baby+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 22/10/21.
+//  Created by Luan Cabral on 29/10/21.
 //
 //
 
@@ -19,8 +19,8 @@ extension Baby {
     @NSManaged public var christmasCard: Data?
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var weeks: String?
     @NSManaged public var pregnanceBegin: String?
+    @NSManaged public var weeks: String?
     @NSManaged public var mother: Mom?
 
 }

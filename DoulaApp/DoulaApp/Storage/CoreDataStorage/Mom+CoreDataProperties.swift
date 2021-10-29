@@ -2,7 +2,7 @@
 //  Mom+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 22/10/21.
+//  Created by Luan Cabral on 29/10/21.
 //
 //
 
@@ -23,11 +23,12 @@ extension Mom {
     @NSManaged public var name: String?
     @NSManaged public var rg: String?
     @NSManaged public var state: String?
+    @NSManaged public var adress: Adress?
     @NSManaged public var baby: Baby?
     @NSManaged public var doctor: Doctor?
     @NSManaged public var hospital: NSSet?
     @NSManaged public var people: Relative?
-    @NSManaged public var adress: Adress?
+    @NSManaged public var notes: NSSet?
 
 }
 
@@ -45,6 +46,23 @@ extension Mom {
 
     @objc(removeHospital:)
     @NSManaged public func removeFromHospital(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for notes
+extension Mom {
+
+    @objc(addNotesObject:)
+    @NSManaged public func addToNotes(_ value: Note)
+
+    @objc(removeNotesObject:)
+    @NSManaged public func removeFromNotes(_ value: Note)
+
+    @objc(addNotes:)
+    @NSManaged public func addToNotes(_ values: NSSet)
+
+    @objc(removeNotes:)
+    @NSManaged public func removeFromNotes(_ values: NSSet)
 
 }
 

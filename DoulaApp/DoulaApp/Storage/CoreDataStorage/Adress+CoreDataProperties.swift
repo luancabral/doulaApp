@@ -2,7 +2,7 @@
 //  Adress+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 22/10/21.
+//  Created by Luan Cabral on 29/10/21.
 //
 //
 
@@ -22,6 +22,7 @@ extension Adress {
     @NSManaged public var number: String?
     @NSManaged public var reference: String?
     @NSManaged public var street: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var mom: Mom?
 
 }
