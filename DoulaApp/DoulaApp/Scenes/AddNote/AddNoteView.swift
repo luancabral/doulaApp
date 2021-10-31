@@ -10,12 +10,13 @@ import UIKit
 class AddNoteView: UIView {
     
     
-    lazy var titleLabel:UILabel = {
-        let label = UILabel()
-        label.text = "Boa noite"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 23)
-        return label
+    lazy var titleTextField:UITextField = {
+        let tf = UITextField()
+        tf.text = "Boa noite"
+        tf.textColor = .black
+        tf.font = UIFont.systemFont(ofSize: 23)
+        tf.borderStyle = .roundedRect
+        return tf
     }()
     
     lazy var textView:UITextView = {
@@ -24,8 +25,8 @@ class AddNoteView: UIView {
         tx.layer.cornerRadius = 10
         tx.font = UIFont.systemFont(ofSize: 16)
         tx.layer.borderWidth = 3
+        
         tx.layer.borderColor = UIColor.darkGray.cgColor
-        tx.text = "Boa noiteeee"
         return tx
     }()
     
@@ -43,11 +44,16 @@ class AddNoteView: UIView {
         self.backgroundColor = .white
     }
     
+    
+    public func setupTextFieldDelegate(delegate:UITextFieldDelegate){
+        self.titleTextField.delegate = delegate
+        
+    }
 }
 
 extension AddNoteView:ViewCodable{
     func setupViewHierarchy() {
-        addSubview(titleLabel)
+        addSubview(titleTextField)
         addSubview(textView)
     }
     
@@ -57,14 +63,15 @@ extension AddNoteView:ViewCodable{
     }
     
     private func setupLabelConstraints(){
-        titleLabel.setCenterXWith(centerXAnchor)
-        titleLabel.setTopConstraintWith(topAnchor, withConstantEqualTo: 20)
-        titleLabel.setDimeensionsConstraintWith(height: 30)
+        titleTextField.setLeftConstraint(leftAnchor, withConstantEqualTo: 10)
+        titleTextField.setRightConstraintWith(rightAnchor, whitConstantEqualTo: 10)
+        titleTextField.setTopConstraintWith(topAnchor, withConstantEqualTo: 20)
+        titleTextField.setDimeensionsConstraintWith(height: 30)
     }
     
     
     private func setupTextViewConstraints(){
-        textView.setTopConstraintWith(titleLabel.bottomAnchor, withConstantEqualTo: 10)
+        textView.setTopConstraintWith(titleTextField.bottomAnchor, withConstantEqualTo: 10)
         textView.setRightConstraintWith(rightAnchor, whitConstantEqualTo: 10)
         textView.setLeftConstraint(leftAnchor, withConstantEqualTo: 10)
         textView.setBottomConstraintWith(bottomAnchor, withConstantEqualTo: 10)

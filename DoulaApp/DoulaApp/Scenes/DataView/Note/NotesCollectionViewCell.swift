@@ -14,12 +14,10 @@ class NotesCollectionViewCell: UICollectionViewCell {
     lazy var tableView:UITableView = {
         let table = UITableView()
         table.separatorStyle  = .none
+        table.showsVerticalScrollIndicator = false
         table.register(NoteTableViewCell.self, forCellReuseIdentifier: NoteTableViewCell.identifier)
         return table
     }()
-    
-    
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +37,10 @@ class NotesCollectionViewCell: UICollectionViewCell {
         self.tableView.dataSource = dataSource
     }
     
+    @objc func writeClick(){
+        print("")
+    }
+    
     
     
 }
@@ -46,24 +48,25 @@ class NotesCollectionViewCell: UICollectionViewCell {
 
 extension NotesCollectionViewCell:ViewCodable{
     func setupViewHierarchy() {
+        
         addSubview(tableView)
+
     }
     
     func setupConstraints() {
+    
         setupTableViewConstraints()
+
+        
     }
     
     
     func setupTableViewConstraints(){
         tableView.setTopConstraintWith(topAnchor, withConstantEqualTo: 51)
-        tableView.setBottomConstraintWith(bottomAnchor)
+        tableView.setBottomConstraintWith(safeAreaLayoutGuide.bottomAnchor)
         tableView.setLeftConstraint(leftAnchor)
         tableView.setRightConstraintWith(rightAnchor)
     }
-    
-   
-    
-    
 }
 
 

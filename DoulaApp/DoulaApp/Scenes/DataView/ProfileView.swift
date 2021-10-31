@@ -16,14 +16,16 @@ class ProfileView: UIView {
     
     
     lazy var collectionView:UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
     
+  
     
     lazy var momProfile:MomDataViewCollectionViewCell = {
         let cv = MomDataViewCollectionViewCell()
@@ -49,6 +51,7 @@ class ProfileView: UIView {
         self.collectionView.delegate = delegate
         self.collectionView.dataSource = datasource
     }
+    
     
 }
 
@@ -76,6 +79,7 @@ extension ProfileView:ViewCodable{
         collectionView.setRightConstraintWith(rightAnchor)
         collectionView.setLeftConstraint(leftAnchor)
         collectionView.setBottomConstraintWith(bottomAnchor)
+        
     }
     
 }

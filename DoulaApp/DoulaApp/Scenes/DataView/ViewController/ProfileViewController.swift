@@ -22,15 +22,56 @@ class ProfileViewController: UIViewController {
         self.profileView?.setupcollectionViewProtocols(delegate: self, datasource: self)
         setupNote()
         self.navigationController?.isNavigationBarHidden = false
+        setupToolBar()
         // Do any additional setup after loading the view.
     }
     
+    
     private func setupNote(){
         self.notes = selectedMom?.notes?.allObjects as? [Note]
+        guard let notes = notes else {
+            return
+        }
+
+        self.notes = notes.sorted(by: {$0.date ?? Date() > $1.date ?? Date()})
     }
     
   
+    @objc func writeClick(){
+        presentNewNote()
+    }
     
+    private func setupToolBar(){
+        self.navigationController?.isToolbarHidden = false
+        self.navigationController?.toolbar.backgroundColor = .gray
+        let writeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(writeClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        writeButton.tintColor = .white
+        self.setToolbarItems([spaceButton,writeButton], animated: false)
+    }
+    
+    private func presentEditNote(row:Int){
+        guard let selectedMom = selectedMom else {
+            return
+        }
+        let addNote = AddNoteViewController()
+        addNote.setupDelegate(delegate: self)
+        addNote.note = self.notes?[row]
+        addNote.selectedMom = selectedMom
+        self.present(addNote, animated: true, completion: nil)
+    }
+    
+    
+    private func presentNewNote(){
+        guard let selectedMom = selectedMom else {
+            return
+        }
+        let newNote = AddNoteViewController()
+        newNote.setupDelegate(delegate: self)
+        newNote.selectedMom = selectedMom
+        newNote.notes = self.notes
+        self.present(newNote, animated: true, completion: nil)
+    }
   
     
 }
@@ -108,11 +149,7 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let addNote = AddNoteViewController()
-            addNote.setupDelegate(delegate: self)
-            addNote.note = self.notes?[indexPath.row]
-            addNote.selectedMom = self.selectedMom
-            self.present(addNote, animated: true, completion: nil)
+        self.presentEditNote(row: indexPath.row)
     }
     
     
@@ -121,9 +158,12 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
 
 extension ProfileViewController:AddNoteViewControllerProtocol{
     func updateView() {
+        self.setupNote()
         DispatchQueue.main.async {
             self.profileView?.collectionView.reloadData()
         }
-       
     }
+    
+    
+    
 }

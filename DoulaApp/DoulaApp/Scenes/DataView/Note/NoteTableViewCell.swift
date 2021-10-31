@@ -21,12 +21,27 @@ class NoteTableViewCell: UITableViewCell {
         return view
     }()
     
+    
     lazy var labelTitle:UILabel = {
         let label = UILabel()
-        label.textColor = .red
-        label.text = "Olaa"
+        label.textColor = .darkGray
+       
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         return label
     }()
+    
+    
+    lazy var contentLabel:UILabel = {
+        let label = UILabel()
+        label.textColor = .darkText
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textAlignment = .justified
+        label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        label.numberOfLines = 10
+        return label
+    }()
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,6 +74,7 @@ class NoteTableViewCell: UITableViewCell {
             return
         }
         self.labelTitle.text = note.title
+        self.contentLabel.text = note.content
     }
 
 }
@@ -68,25 +84,37 @@ extension NoteTableViewCell:ViewCodable{
     func setupViewHierarchy() {
         addSubview(textView)
         textView.addSubview(labelTitle)
+        textView.addSubview(contentLabel)
     }
     
     func setupConstraints() {
         setupTextView()
         setupTitleLabel()
+        setupContentLabelConstraint()
     }
     
     
-    func setupTextView(){
+    private func setupTextView(){
         textView.setTopConstraintWith(topAnchor, withConstantEqualTo: 10)
         textView.setBottomConstraintWith(bottomAnchor, withConstantEqualTo: 10)
         textView.setRightConstraintWith(rightAnchor, whitConstantEqualTo: 10)
         textView.setLeftConstraint(leftAnchor, withConstantEqualTo: 10)
     }
     
-    func setupTitleLabel(){
+    private func setupTitleLabel(){
         labelTitle.setCenterXWith(centerXAnchor)
         labelTitle.setTopConstraintWith(topAnchor, withConstantEqualTo: 20)
         labelTitle.setDimeensionsConstraintWith(height: 44)
+    }
+    
+    private func setupContentLabelConstraint(){
+        contentLabel.setRightConstraintWith(safeAreaLayoutGuide.rightAnchor, whitConstantEqualTo: 25)
+        contentLabel.setLeftConstraint(safeAreaLayoutGuide.leftAnchor, withConstantEqualTo: 25)
+        contentLabel.setCenterXWith(centerXAnchor)
+//        contentLabel.setCenterYWith(centerYAnchor)
+        contentLabel.setTopConstraintWith(labelTitle.bottomAnchor, withConstantEqualTo: 5)
+//        contentLabel.setBottomConstraintWith(bottomAnchor)
+
     }
     
     

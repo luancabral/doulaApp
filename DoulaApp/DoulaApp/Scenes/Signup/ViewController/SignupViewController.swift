@@ -29,6 +29,7 @@ class SignupViewController: UIViewController {
     func createMom(){
         //Create object
         let newMom = Mom(context: self.contetxt)
+        newMom.id = UUID.init()
         newMom.name = self.signupView?.nameTextField.text
         newMom.rg =  self.signupView?.rgTextField.text
         newMom.cpf = self.signupView?.cpfTextField.text
