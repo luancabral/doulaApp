@@ -28,7 +28,7 @@ class NotesCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI(){
+    private func setupUI(){
         setupViews()
     }
     
@@ -54,15 +54,12 @@ extension NotesCollectionViewCell:ViewCodable{
     }
     
     func setupConstraints() {
-    
         setupTableViewConstraints()
-
-        
     }
     
     
     func setupTableViewConstraints(){
-        tableView.setTopConstraintWith(topAnchor, withConstantEqualTo: 51)
+        tableView.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 70)
         tableView.setBottomConstraintWith(safeAreaLayoutGuide.bottomAnchor)
         tableView.setLeftConstraint(leftAnchor)
         tableView.setRightConstraintWith(rightAnchor)

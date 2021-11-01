@@ -11,6 +11,7 @@
 		861225332720E02D000226B3 /* HospitalRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861225322720E02D000226B3 /* HospitalRegisterViewController.swift */; };
 		863D8B98271F403400418F1C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D8B97271F403400418F1C /* SignupViewController.swift */; };
 		863D8B9A271F404F00418F1C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D8B99271F404F00418F1C /* SignupView.swift */; };
+		8649284F272F795B00826CC7 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649284E272F795B00826CC7 /* NavigationExtension.swift */; };
 		8683477F272252870051FFDC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683477E272252870051FFDC /* ProfileView.swift */; };
 		86834782272254000051FFDC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86834781272254000051FFDC /* ProfileViewController.swift */; };
 		8683478627225FE90051FFDC /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683478527225FE90051FFDC /* MenuBar.swift */; };
@@ -66,6 +67,7 @@
 		861225322720E02D000226B3 /* HospitalRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalRegisterViewController.swift; sourceTree = "<group>"; };
 		863D8B97271F403400418F1C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		863D8B99271F404F00418F1C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		8649284E272F795B00826CC7 /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		8683477E272252870051FFDC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		86834781272254000051FFDC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8683478527225FE90051FFDC /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
@@ -151,9 +153,18 @@
 			path = SignupView;
 			sourceTree = "<group>";
 		};
+		86492850272F7B2C00826CC7 /* NavigationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8649284E272F795B00826CC7 /* NavigationExtension.swift */,
+			);
+			path = NavigationExtension;
+			sourceTree = "<group>";
+		};
 		8683477C272251F20051FFDC /* DataView */ = {
 			isa = PBXGroup;
 			children = (
+				86492850272F7B2C00826CC7 /* NavigationExtension */,
 				86FCC0C6272B7E4D00F13D0A /* Menu */,
 				86FCC0C5272B7E2D00F13D0A /* HospitalData */,
 				8683477E272252870051FFDC /* ProfileView.swift */,
@@ -472,6 +483,7 @@
 				861225332720E02D000226B3 /* HospitalRegisterViewController.swift in Sources */,
 				86FCC0E3272B9B7900F13D0A /* Hospital+CoreDataProperties.swift in Sources */,
 				86FCC0E2272B9B7900F13D0A /* Hospital+CoreDataClass.swift in Sources */,
+				8649284F272F795B00826CC7 /* NavigationExtension.swift in Sources */,
 				86FCC0C2272B74CB00F13D0A /* AddNoteView.swift in Sources */,
 				86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */,
 				86CADE18271BC83B00DD0BDC /* HomeVC.swift in Sources */,

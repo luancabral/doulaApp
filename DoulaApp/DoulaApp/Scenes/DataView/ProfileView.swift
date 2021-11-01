@@ -14,6 +14,12 @@ class ProfileView: UIView {
         return mb
     }()
     
+    lazy var navExtesion:NavigationExtension = {
+        let nav = NavigationExtension()
+        nav.backgroundColor = .white
+        return nav
+    }()
+    
     
     lazy var collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
@@ -60,26 +66,35 @@ extension ProfileView:ViewCodable{
     func setupViewHierarchy() {
         addSubview(menuBar)
         addSubview(collectionView)
+        addSubview(navExtesion)
     }
     
     func setupConstraints() {
+        setupNavExtesion()
+        setupCollectionViewConstraints()
         setupnameLabelConstraints()
     }
     
     
     private func setupnameLabelConstraints(){
-        
-        menuBar.setTopConstraintWith(safeAreaLayoutGuide.topAnchor)
+        menuBar.setTopConstraintWith(navExtesion.bottomAnchor)
         menuBar.setLeftConstraint(leftAnchor)
         menuBar.setRightConstraintWith(rightAnchor)
         menuBar.setDimeensionsConstraintWith(height: 50)
-        
-        
+    }
+    
+    private func setupCollectionViewConstraints(){
         collectionView.setTopConstraintWith(menuBar.bottomAnchor)
         collectionView.setRightConstraintWith(rightAnchor)
         collectionView.setLeftConstraint(leftAnchor)
         collectionView.setBottomConstraintWith(bottomAnchor)
-        
+    }
+    
+    private func setupNavExtesion(){
+        navExtesion.setTopConstraintWith(topAnchor, withConstantEqualTo: 55)
+        navExtesion.setRightConstraintWith(rightAnchor)
+        navExtesion.setLeftConstraint(leftAnchor)
+        navExtesion.setDimeensionsConstraintWith(height: 45)
     }
     
 }

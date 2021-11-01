@@ -24,9 +24,7 @@ class HomeVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.fetchPeople()
         self.countWeeks()
-        // Do any additional setup after loading the view.
     }
-    
     
     func fetchPeople(){
         do {
@@ -36,7 +34,6 @@ class HomeVC: UIViewController {
             print("Error")
         }
     }
-    
     
     func countWeeks(){
 //        let components = Calendar.current.dateComponents([.weekOfYear], from: date ?? Date(), to: Date())

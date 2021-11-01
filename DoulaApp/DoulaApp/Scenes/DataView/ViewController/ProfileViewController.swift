@@ -21,9 +21,47 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.profileView?.setupcollectionViewProtocols(delegate: self, datasource: self)
         setupNote()
-        self.navigationController?.isNavigationBarHidden = false
+        setupNavBar()
         setupToolBar()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        hideToolBar()
+    }
+    
+    
+    private func hideToolBar(){
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.toolbar.backgroundColor = .clear
+    }
+    
+    
+    
+    private func setupNavBar(){
+        if let selectedMom = selectedMom {
+            self.navigationItem.title = selectedMom.name
+            self.profileView?.navExtesion.weeksLabel.text = selectedMom.baby?.weeks
+//            self.profileView?.navExtesion.weekLabel = selectedMom.
+            self.profileView?.navExtesion.dppLabel.text = "DPP:\(dateToString(date: selectedMom.dpp))"
+        }
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+        
+    }
+    
+    
+    private func dateToString(date:Date?) -> String{
+//        let  date = self.dateToString(dataString: self.babyRegisteView?.pregnanceStartTextField.text)
+        guard let date = date else {
+            return ""
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        return dateFormatter.string(from: date)
+        
     }
     
     
