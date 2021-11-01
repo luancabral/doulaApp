@@ -24,9 +24,9 @@ class AddNoteView: UIView {
         tx.clipsToBounds = true
         tx.layer.cornerRadius = 10
         tx.font = UIFont.systemFont(ofSize: 16)
-        tx.layer.borderWidth = 3
-        
-        tx.layer.borderColor = UIColor.darkGray.cgColor
+        tx.layer.borderWidth = 0.7
+        tx.textAlignment = .justified
+        tx.layer.borderColor = UIColor.lightGray.cgColor
         return tx
     }()
     
@@ -47,8 +47,8 @@ class AddNoteView: UIView {
     
     public func setupTextFieldDelegate(delegate:UITextFieldDelegate){
         self.titleTextField.delegate = delegate
-        
     }
+    
 }
 
 extension AddNoteView:ViewCodable{

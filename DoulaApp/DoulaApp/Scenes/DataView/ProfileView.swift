@@ -25,7 +25,6 @@ class ProfileView: UIView {
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
         return cv

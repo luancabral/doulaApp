@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var profileView:ProfileView?
     var selectedMom:Mom?
@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController {
             self.profileView?.navExtesion.dppLabel.text = "DPP:\(dateToString(date: selectedMom.dpp))"
         }
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationItem.backButtonDisplayMode = .minimal
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
@@ -79,9 +80,10 @@ class ProfileViewController: UIViewController {
         presentNewNote()
     }
     
+    
     private func setupToolBar(){
         self.navigationController?.isToolbarHidden = false
-        self.navigationController?.toolbar.backgroundColor = .gray
+        self.navigationController?.toolbar.backgroundColor = .lightGray
         let writeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(writeClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         writeButton.tintColor = .white
@@ -183,14 +185,12 @@ extension ProfileViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 150
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presentEditNote(row: indexPath.row)
     }
-    
-    
 }
 
 

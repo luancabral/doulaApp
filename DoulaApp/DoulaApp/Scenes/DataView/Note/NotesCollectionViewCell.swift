@@ -13,7 +13,7 @@ class NotesCollectionViewCell: UICollectionViewCell {
     
     lazy var tableView:UITableView = {
         let table = UITableView()
-        table.separatorStyle  = .none
+//        table.separatorStyle  = .none
         table.showsVerticalScrollIndicator = false
         table.register(NoteTableViewCell.self, forCellReuseIdentifier: NoteTableViewCell.identifier)
         return table

@@ -16,16 +16,15 @@ class NoteTableViewCell: UITableViewCell {
         view.backgroundColor = .white
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 0.7
+        view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
     
     
     lazy var labelTitle:UILabel = {
         let label = UILabel()
-        label.textColor = .darkGray
-       
+        label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 25)
         return label
     }()
@@ -37,7 +36,7 @@ class NoteTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .justified
         label.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        label.numberOfLines = 10
+        label.numberOfLines = 4
         return label
     }()
     
@@ -103,8 +102,8 @@ extension NoteTableViewCell:ViewCodable{
     
     private func setupTitleLabel(){
         labelTitle.setCenterXWith(centerXAnchor)
-        labelTitle.setTopConstraintWith(topAnchor, withConstantEqualTo: 20)
-        labelTitle.setDimeensionsConstraintWith(height: 44)
+        labelTitle.setTopConstraintWith(topAnchor, withConstantEqualTo: 15)
+//        labelTitle.setDimeensionsConstraintWith(height: 44)
     }
     
     private func setupContentLabelConstraint(){
