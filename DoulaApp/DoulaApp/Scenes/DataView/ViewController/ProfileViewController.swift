@@ -20,9 +20,12 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profileView?.setupcollectionViewProtocols(delegate: self, datasource: self)
+        self.profileView?.menuBar.delegate(delegate: self)
         setupNote()
         setupNavBar()
         setupToolBar()
+      
+        
         // Do any additional setup after loading the view.
     }
     
@@ -50,7 +53,6 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-        
     }
     
     
@@ -62,7 +64,6 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy"
         return dateFormatter.string(from: date)
-        
     }
     
     
@@ -71,7 +72,6 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         guard let notes = notes else {
             return
         }
-
         self.notes = notes.sorted(by: {$0.date ?? Date() > $1.date ?? Date()})
     }
     
@@ -113,6 +113,12 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         self.present(newNote, animated: true, completion: nil)
     }
   
+    func scroolToMenuIndex(menuIndex:Int){
+        let indexPath = IndexPath(item: menuIndex, section: 0)
+        profileView?.collectionView.isPagingEnabled = false
+        profileView?.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        profileView?.collectionView.isPagingEnabled = true
+    }
     
 }
 
@@ -168,6 +174,16 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
         return 0
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        profileView?.menuBar.horizontalBarLeftAnchor?.constant = scrollView.contentOffset.x/4
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = targetContentOffset.move().x / view.frame.width
+        let indexPath = IndexPath(item: Int(index), section: 0)
+        profileView?.menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+    }
+    
     
 }
 
@@ -202,6 +218,15 @@ extension ProfileViewController:AddNoteViewControllerProtocol{
         }
     }
     
+    
+    
+}
+
+
+extension ProfileViewController:MenuBarProtocol{
+    func changeCollection(menuIndex: Int) {
+        scroolToMenuIndex(menuIndex: menuIndex)
+    }
     
     
 }

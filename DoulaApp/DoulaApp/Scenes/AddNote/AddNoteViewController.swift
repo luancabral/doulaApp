@@ -98,7 +98,6 @@ class AddNoteViewController: UIViewController {
         newNote.title = noteView?.titleTextField.text
         newNote.content = noteView?.textView.text
         saveNotesToMom(newNote: newNote)
- 
     }
     
     

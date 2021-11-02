@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 29/10/21.
+//  Created by Luan Cabral on 01/11/21.
 //
 //
 
@@ -16,10 +16,10 @@ extension Note {
         return NSFetchRequest<Note>(entityName: "Note")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var date: Date?
     @NSManaged public var content: String?
+    @NSManaged public var date: Date?
     @NSManaged public var id: UUID?
+    @NSManaged public var title: String?
     @NSManaged public var mom: Mom?
 
 }

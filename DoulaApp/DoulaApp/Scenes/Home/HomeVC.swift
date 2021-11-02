@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeVC: UIViewController {
     
@@ -13,6 +14,7 @@ class HomeVC: UIViewController {
     var homeView:HomeView?
     var moms:[Mom]?
     let stack = CoreDataStack.shared
+    var doula:Doula?
     var collectionNb:Int = 1
     override func loadView() {
         self.homeView = HomeView()
@@ -24,11 +26,17 @@ class HomeVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.fetchPeople()
         self.countWeeks()
+        self.homeView?.doulaLabel.text = self.doula?.name
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchPeople()
     }
     
     func fetchPeople(){
         do {
             self.moms = try stack.viewContext.fetch(Mom.fetchRequest())
+            self.doula = try stack.viewContext.fetch(Doula.fetchRequest()).first
             //refresh collection with dispatch
         } catch {
             print("Error")

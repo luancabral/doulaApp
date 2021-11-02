@@ -29,14 +29,6 @@ class ProfileView: UIView {
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
-    
-  
-    
-    lazy var momProfile:MomDataViewCollectionViewCell = {
-        let cv = MomDataViewCollectionViewCell()
-        return cv
-    }()
-  
 
     override init(frame: CGRect) {
         super.init(frame: frame)

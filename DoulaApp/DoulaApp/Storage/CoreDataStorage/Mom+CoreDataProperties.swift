@@ -2,7 +2,7 @@
 //  Mom+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 29/10/21.
+//  Created by Luan Cabral on 01/11/21.
 //
 //
 
@@ -27,8 +27,8 @@ extension Mom {
     @NSManaged public var baby: Baby?
     @NSManaged public var doctor: Doctor?
     @NSManaged public var hospital: NSSet?
-    @NSManaged public var people: Relative?
     @NSManaged public var notes: NSSet?
+    @NSManaged public var people: Relative?
 
 }
 
