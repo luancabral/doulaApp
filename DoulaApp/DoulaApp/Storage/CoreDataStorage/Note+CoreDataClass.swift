@@ -1,5 +1,5 @@
 //
-//  Adress+CoreDataClass.swift
+//  Note+CoreDataClass.swift
 //  DoulaApp
 //
 //  Created by Luan Cabral on 01/11/21.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Adress)
-public class Adress: NSManagedObject {
+@objc(Note)
+public class Note: NSManagedObject {
 
 }

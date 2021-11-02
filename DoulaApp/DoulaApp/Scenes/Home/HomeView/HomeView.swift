@@ -96,7 +96,7 @@ extension HomeView:ViewCodable{
     
     private func setupWelcomeLabelConstraint(){
         welcomeLabel.setLeftConstraint(logoImage.rightAnchor,withConstantEqualTo: 20)
-        welcomeLabel.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 20)
+        welcomeLabel.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 40)
     }
     
     private func setupDoulaLabelConstraint(){
