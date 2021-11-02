@@ -41,6 +41,7 @@
 		86897CE22730AB5E007CEC54 /* Adress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86897CD22730AB5E007CEC54 /* Adress+CoreDataProperties.swift */; };
 		86A66E6A271F824A005313A5 /* BabyRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E69271F8249005313A5 /* BabyRegisterView.swift */; };
 		86A66E6C271F825E005313A5 /* BabyRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */; };
+		86AFF9752730DCEC006C6D55 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AFF9742730DCEC006C6D55 /* PDFCreator.swift */; };
 		86BF1B732720A8D100294D0D /* AdressRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF1B722720A8D100294D0D /* AdressRegisterView.swift */; };
 		86BF1B752720A8F000294D0D /* AdressRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF1B742720A8F000294D0D /* AdressRegisterViewController.swift */; };
 		86BF1B782720B8A800294D0D /* RelativeRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF1B772720B8A800294D0D /* RelativeRegisterView.swift */; };
@@ -101,6 +102,7 @@
 		86897CD22730AB5E007CEC54 /* Adress+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86A66E69271F8249005313A5 /* BabyRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterView.swift; sourceTree = "<group>"; };
 		86A66E6B271F825E005313A5 /* BabyRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRegisterVC.swift; sourceTree = "<group>"; };
+		86AFF9742730DCEC006C6D55 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		86BF1B722720A8D100294D0D /* AdressRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressRegisterView.swift; sourceTree = "<group>"; };
 		86BF1B742720A8F000294D0D /* AdressRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressRegisterViewController.swift; sourceTree = "<group>"; };
 		86BF1B772720B8A800294D0D /* RelativeRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeRegisterView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,14 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		86AFF9732730DCCD006C6D55 /* PDFUtils */ = {
+			isa = PBXGroup;
+			children = (
+				86AFF9742730DCEC006C6D55 /* PDFCreator.swift */,
+			);
+			path = PDFUtils;
+			sourceTree = "<group>";
+		};
 		86BF1B762720A8F500294D0D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		86CADE12271BC83B00DD0BDC /* DoulaApp */ = {
 			isa = PBXGroup;
 			children = (
+				86AFF9732730DCCD006C6D55 /* PDFUtils */,
 				86E31651271E78850098E617 /* Extensions */,
 				86E31638271E49620098E617 /* Application */,
 				86CADE21271BC84000DD0BDC /* Info.plist */,
@@ -543,6 +554,7 @@
 				86FCC09F272B656D00F13D0A /* NoteTableViewCell.swift in Sources */,
 				86834782272254000051FFDC /* ProfileViewController.swift in Sources */,
 				86E3164E271E68120098E617 /* MomCollectionViewCell.swift in Sources */,
+				86AFF9752730DCEC006C6D55 /* PDFCreator.swift in Sources */,
 				8683478627225FE90051FFDC /* MenuBar.swift in Sources */,
 				86897CDE2730AB5E007CEC54 /* Note+CoreDataProperties.swift in Sources */,
 				86897CE02730AB5E007CEC54 /* Relative+CoreDataProperties.swift in Sources */,

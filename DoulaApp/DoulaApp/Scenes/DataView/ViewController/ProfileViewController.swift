@@ -77,7 +77,35 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
   
     @objc func writeClick(){
-        presentNewNote()
+//        presentNewNote()
+        openShareSheet()
+        
+    }
+    
+    
+    private func openShareSheet(){
+        guard
+          let mom = selectedMom,
+          let image = UIImage(named: "luan")
+          else {
+            // 2
+            let alert = UIAlertController(
+              title: "All Information Not Provided",
+              message: "You must supply all information to create a flyer.",
+              preferredStyle: .alert
+            )
+              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+              present(alert, animated: true, completion: nil)
+              return
+          }
+        // 3
+        let pdfCreator = PDFCreator(title: "Dados Doula App", mom: mom, image: image)
+        let pdfData = pdfCreator.createFlyer()
+        let vc = UIActivityViewController(
+          activityItems: [pdfData],
+          applicationActivities: []
+        )
+        present(vc, animated: true, completion: nil)
     }
     
     
