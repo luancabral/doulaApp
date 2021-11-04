@@ -34,7 +34,7 @@ class MenuBar: UIView {
     
     lazy var horizontalBar:UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = .doulaBlueDark
         return view
     }()
     

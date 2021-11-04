@@ -11,6 +11,7 @@ import PDFKit
 class PDFCreator{
     let mom:Mom
     let doula:Doula
+    let logoApp = UIImage(named: "logo")!
     let image: UIImage
     
     
@@ -45,9 +46,9 @@ class PDFCreator{
             // 6
             let imageBottom = addImage(pageRect: pageRect)
             
-            let titleBottom = addTitle(title: "Dados da mãe", pageRect: pageRect, textTop: imageBottom + 18)
+            let titleBottom = addTitle(title: "Doula +", pageRect: pageRect, textTop: imageBottom + 5)
             
-            let momTitle = addSectionTitle(title: "Dados da Mãe:", pageRect: pageRect, textTop: titleBottom + 18)
+            let momTitle = addSectionTitle(title: "Dados da Mãe:", pageRect: pageRect, textTop: titleBottom + 25)
             
             let momInfo = addMomInfoText(pageRect: pageRect, textTop: momTitle + 10)
             
@@ -82,7 +83,7 @@ class PDFCreator{
         let titleStringSize = attributedTitle.size()
         // 5
         let titleStringRect = CGRect(
-            x: (pageRect.width - titleStringSize.width) / 2.0,
+            x: 60,
             y: textTop,
             width: titleStringSize.width,
             height: titleStringSize.height
@@ -214,21 +215,21 @@ class PDFCreator{
     
     func addImage(pageRect: CGRect) -> CGFloat {
         // 1
-        let maxHeight = pageRect.height * 0.15
+        let maxHeight = pageRect.height * 0.1
         let maxWidth = pageRect.width * 0.5
         // 2
-        let aspectWidth = maxWidth / image.size.width
-        let aspectHeight = maxHeight / image.size.height
+        let aspectWidth = maxWidth / logoApp.size.width
+        let aspectHeight = maxHeight / logoApp.size.height
         let aspectRatio = min(aspectWidth, aspectHeight)
         // 3
-        let scaledWidth = image.size.width * aspectRatio
-        let scaledHeight = image.size.height * aspectRatio
+        let scaledWidth = logoApp.size.width * aspectRatio
+        let scaledHeight = logoApp.size.height * aspectRatio
         // 4
         let imageX = (pageRect.width - scaledWidth) / 2.0
-        let imageRect = CGRect(x: imageX, y: 36,
+        let imageRect = CGRect(x: 50, y: 36,
                                width: scaledWidth, height: scaledHeight)
         // 5
-        image.draw(in: imageRect)
+        logoApp.draw(in: imageRect)
         return imageRect.origin.y + imageRect.size.height
     }
     

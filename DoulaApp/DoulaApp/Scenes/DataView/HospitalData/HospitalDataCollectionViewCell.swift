@@ -14,9 +14,10 @@ class HospitalDataCollectionViewCell: UICollectionViewCell {
     
     lazy var hospitalLabel:UILabel = {
         let label = UILabel()
-        label.textColor =  .doulaAppPurple
+        label.textColor =  .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.text  = "Dados do hospital"
+        
         return label
     }()
     
@@ -53,7 +54,7 @@ class HospitalDataCollectionViewCell: UICollectionViewCell {
     
     lazy var doctorSectionLabel:UILabel = {
         let label = UILabel()
-        label.textColor =  .doulaAppPurple
+        label.textColor =  .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.text = "Dados do médico"
         return label

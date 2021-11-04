@@ -111,8 +111,8 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
         let shareButton =  UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionClick))
         let writeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(writeClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        writeButton.tintColor = .systemBlue
-        shareButton.tintColor = .systemBlue
+        writeButton.tintColor = .doulaBlueDark
+        shareButton.tintColor = .doulaBlueDark
         self.setToolbarItems([writeButton,spaceButton,shareButton], animated: false)
     }
     

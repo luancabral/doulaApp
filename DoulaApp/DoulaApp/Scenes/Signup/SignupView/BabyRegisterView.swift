@@ -103,7 +103,7 @@ class BabyRegisterView: UIView {
     
     lazy var christmasCard:UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .doulaAppMain
+        view.backgroundColor = .doulaBlueL
         view.clipsToBounds = true
         view.layer.cornerRadius = 6.5
         view.layer.borderWidth =  0.5
@@ -129,7 +129,7 @@ class BabyRegisterView: UIView {
         let btn = UIButton()
         btn.setTitle("Continuar", for: .normal)
         btn.clipsToBounds = true
-        btn.backgroundColor = .doulaAppPurple
+        btn.backgroundColor = .doulaBlueDark
         btn.titleLabel?.font =  UIFont.systemFont(ofSize: 13)
         btn.layer.cornerRadius = 5.5
         btn.isEnabled = false

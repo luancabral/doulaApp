@@ -9,7 +9,7 @@ class RelativeDataCollectionViewCell: UICollectionViewCell {
     
     lazy var hospitalLabel:UILabel = {
         let label = UILabel()
-        label.textColor =  .doulaAppPurple
+        label.textColor =  .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.text  = "Dados do Parente"
         return label

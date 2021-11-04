@@ -13,7 +13,7 @@ class HomeView:UIView{
     lazy var logoImage:UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.image = UIImage(named: "logoApp")
+        image.image = UIImage(named: "logo")
 //        image.backgroundColor = .red
         return image
     }()
@@ -21,24 +21,23 @@ class HomeView:UIView{
     
     lazy var welcomeLabel:UILabel = {
         let label = UILabel()
-        label.text = "Bem vindo(a)"
+        label.text = "Bem vinda(o)"
         label.textAlignment = .center
-        label.textColor = .darkGray
+        label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 25)
         return label
     }()
     lazy var doulaLabel:UILabel = {
         let label = UILabel()
-        label.text = "Arielle"
         label.textAlignment = .center
-        label.textColor = .doulaAppDetails
+        label.textColor = .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 25)
         return label
     }()
     
     lazy var momCollectionView:UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: .init())
-        collectionView.backgroundColor = .doulaAppMain
+        collectionView.backgroundColor = .doulaBlueL
         collectionView.clipsToBounds = true
 //        collectionView.layer.cornerRadius = 50
         collectionView.showsVerticalScrollIndicator = false
@@ -89,14 +88,14 @@ extension HomeView:ViewCodable{
     }
     
     private func setupLogoImageConstraint(){
-        logoImage.setLeftConstraint(safeAreaLayoutGuide.leftAnchor)
-        logoImage.setTopConstraintWith(safeAreaLayoutGuide.topAnchor)
-        logoImage.setDimeensionsConstraintWith(height: 150, andWithWidth: 150)
+        logoImage.setLeftConstraint(safeAreaLayoutGuide.leftAnchor, withConstantEqualTo: 20)
+        logoImage.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 10)
+        logoImage.setDimeensionsConstraintWith(height: 90, andWithWidth: 90)
     }
     
     private func setupWelcomeLabelConstraint(){
-        welcomeLabel.setLeftConstraint(logoImage.rightAnchor,withConstantEqualTo: 20)
-        welcomeLabel.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 40)
+        welcomeLabel.setLeftConstraint(logoImage.rightAnchor,withConstantEqualTo: 50)
+        welcomeLabel.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 20)
     }
     
     private func setupDoulaLabelConstraint(){
@@ -108,7 +107,7 @@ extension HomeView:ViewCodable{
         momCollectionView.setLeftConstraint(leftAnchor)
         momCollectionView.setRightConstraintWith(rightAnchor)
         momCollectionView.setBottomConstraintWith(bottomAnchor)
-        momCollectionView.setTopConstraintWith(logoImage.bottomAnchor, withConstantEqualTo: 10)
+        momCollectionView.setTopConstraintWith(logoImage.bottomAnchor, withConstantEqualTo: 20)
     }
     
 }

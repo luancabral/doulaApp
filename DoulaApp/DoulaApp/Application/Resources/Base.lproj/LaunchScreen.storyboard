@@ -15,19 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="pO3-Kk-SNt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-KC-Ox5">
                                 <rect key="frame" x="87" y="342" width="240" height="212"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="VN9-G9-Pkz"/>
-                                    <constraint firstAttribute="width" constant="240" id="dIE-pf-Kmf"/>
+                                    <constraint firstAttribute="width" constant="240" id="FIu-XK-kBI"/>
+                                    <constraint firstAttribute="width" secondItem="Fcx-KC-Ox5" secondAttribute="height" multiplier="60:53" id="SQ6-Vo-ply"/>
+                                    <constraint firstAttribute="height" constant="212" id="XjY-LB-6qH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.94593223158296169" green="0.94136251065744014" blue="0.95050195250848324" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pO3-Kk-SNt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="7KR-Tl-PRy"/>
-                            <constraint firstItem="pO3-Kk-SNt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xiu-bz-j9q"/>
+                            <constraint firstItem="Fcx-KC-Ox5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EhD-H7-gCd"/>
+                            <constraint firstItem="Fcx-KC-Ox5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="en9-YW-whO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo2" width="1176" height="1176"/>
+        <image name="logo" width="552.5" height="508.5"/>
     </resources>
 </document>
