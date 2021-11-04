@@ -2,7 +2,7 @@
 //  Doula+CoreDataProperties.swift
 //  DoulaApp
 //
-//  Created by Luan Cabral on 01/11/21.
+//  Created by Luan Cabral on 03/11/21.
 //
 //
 
@@ -16,9 +16,9 @@ extension Doula {
         return NSFetchRequest<Doula>(entityName: "Doula")
     }
 
+    @NSManaged public var email: String?
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var email: String?
     @NSManaged public var phone: String?
 
 }

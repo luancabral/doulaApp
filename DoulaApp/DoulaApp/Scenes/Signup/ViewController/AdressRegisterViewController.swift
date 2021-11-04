@@ -58,7 +58,7 @@ extension AdressRegisterViewController:UITextFieldDelegate{
         if textField ==  self.adressRegisterView?.cepTextField{
             guard let text = textField.text else { return false }
                let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = self.adressRegisterView?.format(with: "XXXXX-XXX", phone: newString)
+            textField.format(with: Masks.cep.maskFormat!, phone: newString)
             return false
         }
         return true

@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+
 class HomeVC: UIViewController {
     
     var width = UIScreen.main.bounds.width
@@ -31,12 +32,19 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchPeople()
+        
     }
+    
+    
+    
+    
+    
     
     func fetchPeople(){
         do {
             self.moms = try stack.viewContext.fetch(Mom.fetchRequest())
             self.doula = try stack.viewContext.fetch(Doula.fetchRequest()).first
+            homeView?.momCollectionView.reloadData()
             //refresh collection with dispatch
         } catch {
             print("Error")
@@ -44,65 +52,71 @@ class HomeVC: UIViewController {
     }
     
     func countWeeks(){
-//        let components = Calendar.current.dateComponents([.weekOfYear], from: date ?? Date(), to: Date())
+        //        let components = Calendar.current.dateComponents([.weekOfYear], from: date ?? Date(), to: Date())
         moms?.forEach({ mom in
-            let date = stringToDate(dataString: mom.baby?.pregnanceBegin)
+            let date = mom.baby?.pregnanceBegin
             let weeks = Calendar.current.dateComponents([.weekOfYear], from: date ?? Date(), to: Date())
             mom.baby?.weeks =  "\(weeks.weekOfYear ?? 0) semanas"
-            if mom.dpp == nil{
-                let dppDate:Date? = setupDPP(mom:mom, pregrenanceBegin: date)
-                if let dppDate = dppDate {
-                    mom.dpp = dppDate
-                    stack.saveContext()
-                }
-            }
-           
+//            if mom.dpp == nil{
+//                let dppDate:Date? = setupDPP(mom:mom, pregrenanceBegin: date)
+//                if let dppDate = dppDate {
+//                    mom.dpp = dppDate
+//                    stack.saveContext()
+//                }
+//            }
+            
         })
     }
     
-    func setupDPP(mom:Mom, pregrenanceBegin:Date?) -> Date?{
-        var dppDate:String?
-        let date = stringToDate(dataString: mom.baby?.pregnanceBegin)
-        let calendar = Calendar.current
-        guard let date = date,let beginDate = pregrenanceBegin else {
-            return nil
-        }
-        guard let dppDay = Calendar.current.date(byAdding: .day, value: 7, to: date) else{
-            return nil
-        }
-        
-        guard let dppMonth = Calendar.current.date(byAdding: .month, value: -3, to: date) else{
-            return nil
-        }
-            let dayDpp = calendar.dateComponents([.day], from: dppDay)
-            let month = calendar.dateComponents([.month], from: dppMonth)
-            let dumMonthYear = calendar.dateComponents([.month, .year], from: beginDate)
-            
-        guard let monthDpp = month.month, let dumMonth = dumMonthYear.month, let dumYear = dumMonthYear.year, let dayDpp = dayDpp.day else {
-                return nil
-            }
-            
-            if monthDpp < dumMonth{
-                dppDate =  "\(dayDpp)/\(monthDpp)/\(dumYear + 1)"
-            }else{
-                dppDate = "\(dayDpp)/\(dppMonth)/\(dumYear)"
-            }
-        
-            return stringToDate(dataString: dppDate)
-
-        }
-
+//    private func setupDPP(mom:Mom, pregrenanceBegin:Date?) -> Date?{
+//        var dppDate:String?
+//        let date = mom.baby?.pregnanceBegin
+//        let calendar = Calendar.current
+//        guard let date = date,let beginDate = pregrenanceBegin else {
+//            return nil
+//        }
+//        guard let dppDay = Calendar.current.date(byAdding: .day, value: 7, to: date) else{
+//            return nil
+//        }
+//        
+//        guard let dppMonth = Calendar.current.date(byAdding: .month, value: -3, to: date) else{
+//            return nil
+//        }
+//        let dayDpp = calendar.dateComponents([.day], from: dppDay)
+//        let month = calendar.dateComponents([.month], from: dppMonth)
+//        let dumMonthYear = calendar.dateComponents([.month, .year], from: beginDate)
+//        
+//        guard let monthDpp = month.month, let dumMonth = dumMonthYear.month, let dumYear = dumMonthYear.year, let dayDpp = dayDpp.day else {
+//            return nil
+//        }
+//        
+//        if monthDpp < dumMonth{
+//            dppDate =  "\(dayDpp)/\(monthDpp)/\(dumYear + 1)"
+//        }else{
+//            dppDate = "\(dayDpp)/\(dppMonth)/\(dumYear)"
+//        }
+//        
+//        return dppDate?.toDate()
+//        
+//    }
+    
+    
+  
+    
     
     func stringToDate(dataString:String?) -> Date?{
-//        let  date = self.dateToString(dataString: self.babyRegisteView?.pregnanceStartTextField.text)
+        guard let dataString = dataString else {
+            return nil
+        }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        guard let date = dateFormatter.date(from: dataString ?? "10/02/1999") else{
+        guard let date = dateFormatter.date(from: dataString) else{
             return nil
         }
         return date
     }
-
+    
 }
 
 extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
@@ -111,7 +125,7 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
         return (moms?.count ?? 0) + 1
     }
     
- 
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -138,8 +152,8 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        }
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -154,10 +168,11 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectio
         }
         let profileVC:ProfileViewController = ProfileViewController()
         profileVC.selectedMom = mom[indexPath.item - 1]
+        profileVC.doula = doula
         
         self.navigationController?.pushViewController(profileVC, animated: false)
         
     }
-
+    
     
 }

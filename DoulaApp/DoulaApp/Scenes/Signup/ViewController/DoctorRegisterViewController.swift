@@ -50,6 +50,15 @@ extension DoctorRegisterViewController:DoctorRegisterViewProtocol{
 
 extension DoctorRegisterViewController:UITextFieldDelegate{
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField ==  self.hospitalRegisterView?.phoneTextField{
+            guard let text = textField.text else { return false }
+               let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.format(with: Masks.phone.maskFormat!, phone: newString)
+            return false
+        }
+        return true
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.hospitalRegisterView?.checkTextField(textField)

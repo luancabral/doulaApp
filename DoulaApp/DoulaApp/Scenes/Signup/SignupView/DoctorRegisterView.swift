@@ -75,7 +75,7 @@ class DoctorRegisterView: UIView {
         tf.textColor = .darkGray
         tf.font = UIFont.systemFont(ofSize: 14)
         tf.autocorrectionType = .no
-        tf.keyboardType = .default
+        tf.keyboardType = .numberPad
         tf.borderStyle = .roundedRect
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor

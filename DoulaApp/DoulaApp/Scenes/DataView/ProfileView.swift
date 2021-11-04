@@ -82,7 +82,7 @@ extension ProfileView:ViewCodable{
     }
     
     private func setupNavExtesion(){
-        navExtesion.setTopConstraintWith(topAnchor, withConstantEqualTo: 55)
+        navExtesion.setTopConstraintWith(safeAreaLayoutGuide.topAnchor)
         navExtesion.setRightConstraintWith(rightAnchor)
         navExtesion.setLeftConstraint(leftAnchor)
         navExtesion.setDimeensionsConstraintWith(height: 45)
