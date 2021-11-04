@@ -141,7 +141,7 @@ class WelcomeView: UIView {
         let btn = UIButton()
         btn.setTitle("Salvar", for: .normal)
         btn.clipsToBounds = true
-        btn.backgroundColor = .doulaAppPurple
+        btn.backgroundColor = .doulaBlueDark
         btn.titleLabel?.font =  UIFont.systemFont(ofSize: 13)
         btn.layer.cornerRadius = 5.5
         btn.addTarget(self, action: #selector(self.tappedSaveButton), for: .touchUpInside)

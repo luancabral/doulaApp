@@ -57,48 +57,9 @@ class HomeVC: UIViewController {
             let date = mom.baby?.pregnanceBegin
             let weeks = Calendar.current.dateComponents([.weekOfYear], from: date ?? Date(), to: Date())
             mom.baby?.weeks =  "\(weeks.weekOfYear ?? 0) semanas"
-//            if mom.dpp == nil{
-//                let dppDate:Date? = setupDPP(mom:mom, pregrenanceBegin: date)
-//                if let dppDate = dppDate {
-//                    mom.dpp = dppDate
-//                    stack.saveContext()
-//                }
-//            }
             
         })
     }
-    
-//    private func setupDPP(mom:Mom, pregrenanceBegin:Date?) -> Date?{
-//        var dppDate:String?
-//        let date = mom.baby?.pregnanceBegin
-//        let calendar = Calendar.current
-//        guard let date = date,let beginDate = pregrenanceBegin else {
-//            return nil
-//        }
-//        guard let dppDay = Calendar.current.date(byAdding: .day, value: 7, to: date) else{
-//            return nil
-//        }
-//        
-//        guard let dppMonth = Calendar.current.date(byAdding: .month, value: -3, to: date) else{
-//            return nil
-//        }
-//        let dayDpp = calendar.dateComponents([.day], from: dppDay)
-//        let month = calendar.dateComponents([.month], from: dppMonth)
-//        let dumMonthYear = calendar.dateComponents([.month, .year], from: beginDate)
-//        
-//        guard let monthDpp = month.month, let dumMonth = dumMonthYear.month, let dumYear = dumMonthYear.year, let dayDpp = dayDpp.day else {
-//            return nil
-//        }
-//        
-//        if monthDpp < dumMonth{
-//            dppDate =  "\(dayDpp)/\(monthDpp)/\(dumYear + 1)"
-//        }else{
-//            dppDate = "\(dayDpp)/\(dppMonth)/\(dumYear)"
-//        }
-//        
-//        return dppDate?.toDate()
-//        
-//    }
     
     
   

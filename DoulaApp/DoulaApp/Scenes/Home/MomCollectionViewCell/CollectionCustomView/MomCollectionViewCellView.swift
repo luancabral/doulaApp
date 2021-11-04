@@ -32,7 +32,7 @@ class MomCollectionViewCellView: UIView {
         let label = UILabel()
         label.text = "Nome da mãe"
         label.textAlignment = .center
-        label.textColor = .doulaAppDetails
+        label.textColor = .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
@@ -41,7 +41,7 @@ class MomCollectionViewCellView: UIView {
         let label = UILabel()
         label.text = "15 semanas"
         label.textAlignment = .center
-        label.textColor = .doulaAppDetails
+        label.textColor = .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
@@ -50,7 +50,7 @@ class MomCollectionViewCellView: UIView {
         let label = UILabel()
         label.text = "25/10/2021"
         label.textAlignment = .center
-        label.textColor = .doulaAppDetails
+        label.textColor = .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()

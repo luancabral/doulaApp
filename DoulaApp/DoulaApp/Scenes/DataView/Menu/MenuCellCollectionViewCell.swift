@@ -13,7 +13,7 @@ class MenuCellCollectionViewCell: UICollectionViewCell {
     lazy var imageView:UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.tintColor = .doulaAppPurple
+        imageView.tintColor = .lightGray
         return imageView
         
     }()
@@ -21,14 +21,14 @@ class MenuCellCollectionViewCell: UICollectionViewCell {
     override var isHighlighted: Bool{
         didSet{
           
-            imageView.tintColor = isHighlighted ? .doulaPink : .doulaAppPurple
+            imageView.tintColor = isHighlighted ? .doulaBlueDark : .lightGray
         }
     }
     
     
     override var isSelected: Bool{
         didSet{
-            imageView.tintColor = isSelected ? .doulaPink : .doulaAppPurple
+            imageView.tintColor = isSelected ? .doulaBlueDark : .lightGray
         }
     }
     

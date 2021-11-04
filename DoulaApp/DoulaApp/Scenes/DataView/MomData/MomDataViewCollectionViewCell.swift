@@ -14,7 +14,7 @@ class MomDataViewCollectionViewCell: UICollectionViewCell {
     
     lazy var momlLabel:UILabel = {
         let label = UILabel()
-        label.textColor =  .doulaAppPurple
+        label.textColor =  .doulaBlueDark
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.text  = "Dados da Mãe"
         return label
@@ -24,7 +24,7 @@ class MomDataViewCollectionViewCell: UICollectionViewCell {
     
     lazy var momImage:UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .doulaAppMain
+        view.backgroundColor = .doulaBlueL
         view.clipsToBounds = true
         view.layer.cornerRadius = 6.5
         view.layer.borderWidth =  0.5
