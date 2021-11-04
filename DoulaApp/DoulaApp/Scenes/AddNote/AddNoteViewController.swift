@@ -31,7 +31,7 @@ class AddNoteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.noteView?.textView.text = note?.content
+        self.noteView?.setupViewContent(note: self.note)
         self.noteView?.setupTextFieldDelegate(delegate: self)
     }
     

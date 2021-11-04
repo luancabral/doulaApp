@@ -12,7 +12,7 @@ class AddNoteView: UIView {
     
     lazy var titleTextField:UITextField = {
         let tf = UITextField()
-        tf.text = "Boa noite"
+        tf.placeholder = "Titulo"
         tf.textColor = .black
         tf.font = UIFont.systemFont(ofSize: 23)
         tf.borderStyle = .roundedRect
@@ -47,6 +47,15 @@ class AddNoteView: UIView {
     
     public func setupTextFieldDelegate(delegate:UITextFieldDelegate){
         self.titleTextField.delegate = delegate
+    }
+    
+    public func setupViewContent(note:Note?){
+        guard let note = note else {
+            return
+        }
+
+        textView.text = note.content
+        titleTextField.text = note.title
     }
     
 }

@@ -18,14 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let vc:UIViewController  = HomeVC()
-        
+        let vc:UIViewController
+        if isAppAlreadyLaunchedOnce(){
+            vc  = HomeVC()
+        }else{
+            vc = WelcomeVC()
+        }
         let navBar =  UINavigationController(rootViewController: vc)
-
         window.rootViewController = navBar
         window.makeKeyAndVisible()
         self.window = window
-    
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,6 +56,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    
+    func isAppAlreadyLaunchedOnce() -> Bool{
+        let defaults = UserDefaults.standard
+        
+        if defaults.bool(forKey: "isAppAlreadyLaunchedOnce") {
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            return false
+        }
     }
 
 

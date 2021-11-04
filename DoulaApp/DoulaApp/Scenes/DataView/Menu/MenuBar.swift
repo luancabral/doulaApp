@@ -24,6 +24,7 @@ class MenuBar: UIView {
         cv.delegate = self
         cv.dataSource = self
         cv.backgroundColor = .white
+        cv.isScrollEnabled = false
         cv.register(MenuCellCollectionViewCell.self, forCellWithReuseIdentifier: MenuCellCollectionViewCell.identifier)
         cv.contentInset =  UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         let selectedInexPath = IndexPath(item: 0, section: 0)

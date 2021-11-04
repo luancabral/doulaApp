@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+
+
 class SignupViewController: UIViewController {
     let pickerViewData:[String] = ["Solteira", "Casada","Separada","Divorciada", "Viúva"]
     let contetxt = CoreDataStack.shared.viewContext
@@ -35,7 +38,7 @@ class SignupViewController: UIViewController {
         newMom.cpf = self.signupView?.cpfTextField.text
         newMom.state = self.signupView?.stateTextField.text
         //Save data
-//            stack.saveContext()
+        //            stack.saveContext()
         self.newMom = newMom
     }
 }
@@ -47,13 +50,13 @@ extension SignupViewController:UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField ==  self.signupView?.rgTextField{
             guard let text = textField.text else { return false }
-               let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = self.signupView?.format(with: "X.XXX.XXX", phone: newString)
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.format(with: Masks.rg.maskFormat!, phone: newString)
             return false
         }else if textField == self.signupView?.cpfTextField{
             guard let text = textField.text else { return false }
-               let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = self.signupView?.format(with: "XXX.XXX.XXX-XX", phone: newString)
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.format(with: Masks.cpf.maskFormat!, phone: newString)
             return false
         }
         return true
@@ -61,7 +64,7 @@ extension SignupViewController:UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.signupView?.checkTextField(textField)
-//        self.createMom()
+        //        self.createMom()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -71,7 +74,7 @@ extension SignupViewController:UITextFieldDelegate{
 
 
 extension SignupViewController:UIPickerViewDelegate, UIPickerViewDataSource{
-   
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

@@ -126,8 +126,7 @@ class SignupView: UIView {
         tf.placeholder = "Digite o estado civil"
         tf.textColor = .darkGray
         tf.font = UIFont.systemFont(ofSize: 14)
-        tf.autocorrectionType = .no
-        tf.keyboardType = .numberPad
+//        tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.backgroundColor = .white
         tf.layer.borderColor = UIColor.clear.cgColor
@@ -161,26 +160,6 @@ class SignupView: UIView {
     }()
     
     //MARK: PUT ON UTILS FOLDER
-    public func format(with mask: String, phone: String) -> String {
-        let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-        var result = ""
-        var index = numbers.startIndex // numbers iterator
-
-        // iterate over the mask characters until the iterator of numbers ends
-        for ch in mask where index < numbers.endIndex {
-            if ch == "X" {
-                // mask requires a number in this place, so take the next one
-                result.append(numbers[index])
-
-                // move numbers iterator to the next index
-                index = numbers.index(after: index)
-
-            } else {
-                result.append(ch) // just append a mask character
-            }
-        }
-        return result
-    }
     
     @objc func tappednextButton(){
         self.delegate?.actionRegisterBtn()

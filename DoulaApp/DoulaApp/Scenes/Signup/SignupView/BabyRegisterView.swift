@@ -66,7 +66,7 @@ class BabyRegisterView: UIView {
         picker.sizeToFit()
         let loc = Locale(identifier: "pt-br")
         picker.locale = loc
-        picker.maximumDate = Date()
+//        picker.maximumDate = Date()
         picker.preferredDatePickerStyle = .inline
         return picker
     }()

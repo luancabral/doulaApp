@@ -13,7 +13,8 @@ class NotesCollectionViewCell: UICollectionViewCell {
     
     lazy var tableView:UITableView = {
         let table = UITableView()
-//        table.separatorStyle  = .none
+        table.separatorStyle  = .none
+        table.backgroundColor = .doulaAppGray
         table.showsVerticalScrollIndicator = false
         table.register(NoteTableViewCell.self, forCellReuseIdentifier: NoteTableViewCell.identifier)
         return table
@@ -59,8 +60,8 @@ extension NotesCollectionViewCell:ViewCodable{
     
     
     func setupTableViewConstraints(){
-        tableView.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 70)
-        tableView.setBottomConstraintWith(safeAreaLayoutGuide.bottomAnchor)
+        tableView.setTopConstraintWith(safeAreaLayoutGuide.topAnchor, withConstantEqualTo: 100)
+        tableView.setBottomConstraintWith(safeAreaLayoutGuide.bottomAnchor, withConstantEqualTo: 100)
         tableView.setLeftConstraint(leftAnchor)
         tableView.setRightConstraintWith(rightAnchor)
     }

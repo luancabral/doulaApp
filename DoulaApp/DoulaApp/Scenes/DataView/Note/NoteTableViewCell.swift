@@ -65,6 +65,7 @@ class NoteTableViewCell: UITableViewCell {
     private func setupUI(){
         setupViews()
         self.selectionStyle = .none
+        self.backgroundColor = .doulaAppGray
     }
     
     public func setupItems(note:Note?){

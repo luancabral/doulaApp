@@ -31,21 +31,10 @@ class MomCollectionViewCell: UICollectionViewCell {
     public func setupCell(data:Mom){
         self.momCollectionViewCellView.motherNameLabel.text = data.name
         self.momCollectionViewCellView.weeksLabel.text = data.baby?.weeks
-        self.momCollectionViewCellView.dppLabel.text = self.dateToString(date: data.dpp)
+        self.momCollectionViewCellView.dppLabel.text = data.dpp?.toString()
     }
     
-    func dateToString(date:Date?) -> String?{
-//        let  date = self.dateToString(dataString: self.babyRegisteView?.pregnanceStartTextField.text)
-        guard let date = date else {
-            return nil
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: date)
-        
-    }
-    
-    
+
 }
 
 

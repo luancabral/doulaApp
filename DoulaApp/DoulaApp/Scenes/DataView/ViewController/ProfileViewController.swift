@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     var profileView:ProfileView?
     var selectedMom:Mom?
     var notes:[Note]?
+    var doula:Doula?
     override func loadView() {
         self.profileView = ProfileView()
         self.view = profileView
@@ -46,7 +47,7 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
             self.navigationItem.title = selectedMom.name
             self.profileView?.navExtesion.weeksLabel.text = selectedMom.baby?.weeks
 //            self.profileView?.navExtesion.weekLabel = selectedMom.
-            self.profileView?.navExtesion.dppLabel.text = "DPP:\(dateToString(date: selectedMom.dpp))"
+            self.profileView?.navExtesion.dppLabel.text = "DPP:\(selectedMom.dpp?.toString() ?? "Erro")"
         }
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationItem.backButtonDisplayMode = .minimal
@@ -56,15 +57,7 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    private func dateToString(date:Date?) -> String{
-//        let  date = self.dateToString(dataString: self.babyRegisteView?.pregnanceStartTextField.text)
-        guard let date = date else {
-            return ""
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yy"
-        return dateFormatter.string(from: date)
-    }
+ 
     
     
     private func setupNote(){
@@ -77,15 +70,18 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
   
     @objc func writeClick(){
-//        presentNewNote()
+        presentNewNote()
+    }
+    
+    @objc func actionClick(){
         openShareSheet()
-        
     }
     
     
     private func openShareSheet(){
         guard
           let mom = selectedMom,
+          let doula = doula, 
           let image = UIImage(named: "luan")
           else {
             // 2
@@ -99,7 +95,7 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
               return
           }
         // 3
-        let pdfCreator = PDFCreator(title: "Dados Doula App", mom: mom, image: image)
+        let pdfCreator = PDFCreator(mom: mom, image: image, doula: doula)
         let pdfData = pdfCreator.createFlyer()
         let vc = UIActivityViewController(
           activityItems: [pdfData],
@@ -111,11 +107,13 @@ class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func setupToolBar(){
         self.navigationController?.isToolbarHidden = false
-        self.navigationController?.toolbar.backgroundColor = .lightGray
+        self.navigationController?.toolbar.backgroundColor = .white
+        let shareButton =  UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionClick))
         let writeButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(writeClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        writeButton.tintColor = .white
-        self.setToolbarItems([spaceButton,writeButton], animated: false)
+        writeButton.tintColor = .systemBlue
+        shareButton.tintColor = .systemBlue
+        self.setToolbarItems([writeButton,spaceButton,shareButton], animated: false)
     }
     
     private func presentEditNote(row:Int){
